@@ -1,11 +1,26 @@
 Ruby Styleguide
 ===============
 
-Based on [https://github.com/styleguide/ruby](https://github.com/styleguide/ruby) and [https://github.com/bbatsov/ruby-style-guide](https://github.com/bbatsov/ruby-style-guide).
+Based on [https://github.com/bbatsov/ruby-style-guide](https://github.com/bbatsov/ruby-style-guide) (love it, but too big for juniors) and [https://github.com/styleguide/ruby](https://github.com/styleguide/ruby) for documents structure.
+
+Table of Contents
+-----------------
+
+* [Code files](#code-files)
+* [Coding Style](#coding-style)
+* [Syntax](#syntax)
+* [Naming](#naming)
+* [Classes](#classes)
+* [Exceptions](#exceptions)
+* [Collections](#collections)
+* [Strings](#strings)
+* [Regular Expressions](#regular-expressions)
+* [Percent Literals](#percent-literals)
+* [Hashes](#metaprogramming)
 
 
-Files
------
+Code files
+----------
 
 * Use `UTF-8` as the source file encoding.
 
@@ -31,6 +46,23 @@ Coding Style
 
 * End each file with a blank newline.
 
+* Don't use `;` to separate statements and expressions. As a corollary - use one expression per line.
+
+  ```ruby
+  # bad
+  puts 'foobar'; # superfluous semicolon
+
+  puts 'foo'; puts 'bar' # two expressions on the same line
+
+  # good
+  puts 'foobar'
+
+  puts 'foo'
+  puts 'bar'
+
+  puts 'foo', 'bar' # this applies to puts in particular
+  ```
+
 * Use spaces around operators, after commas, colons and semicolons, around { and before }.
 
   ```ruby
@@ -38,6 +70,16 @@ Coding Style
   a, b = 1, 2
   1 > 2 ? true : false; puts "Hi"
   [1, 2, 3].each { |e| puts e }
+  ```
+
+  The only exception, regarding operators, is the exponent operator:
+
+  ```ruby
+  # bad
+  e = M * c ** 2
+
+  # good
+  e = M * c**2
   ```
 
 * No spaces after `(`, `[` or before `]`, `)`.
@@ -313,6 +355,20 @@ Naming
 
 Classes
 -------
+
+* Prefer a single-line format for class definitions with no body.
+
+  ```ruby
+  # bad
+  class FooError < StandardError
+  end
+
+  # okish
+  class FooError < StandardError; end
+
+  # good
+  FooError = Class.new(StandardError)
+  ```
 
 * Avoid the usage of class (`@@`) variables due to their unusual behavior in inheritance.
 
