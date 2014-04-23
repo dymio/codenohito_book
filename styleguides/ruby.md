@@ -1,7 +1,7 @@
 Ruby Styleguide
 ===============
 
-Based on [https://github.com/bbatsov/ruby-style-guide](https://github.com/bbatsov/ruby-style-guide) and [https://github.com/styleguide/ruby](https://github.com/styleguide/ruby).
+Based on [https://github.com/styleguide/ruby](https://github.com/styleguide/ruby) and [https://github.com/bbatsov/ruby-style-guide](https://github.com/bbatsov/ruby-style-guide).
 
 
 Files
@@ -217,7 +217,7 @@ Syntax
   end.map { |name| name.upcase }
   ```
 
-Some will argue that multiline chaining would look OK with the use of `{...}`, but they should ask themselves - is this code really readable and can't the block's contents be extracted into nifty methods?
+  Some will argue that multiline chaining would look OK with the use of `{...}`, but they should ask themselves - is this code really readable and can't the block's contents be extracted into nifty methods?
 
 * Avoid `return` where not required.
 
@@ -249,85 +249,94 @@ Some will argue that multiline chaining would look OK with the use of `{...}`, b
 
   While several Ruby books suggest the first style, the second is much more prominent in practice (and arguably a bit more readable).
 
-Using the return value of = (an assignment) is ok.
+* Using the return value of `=` (an assignment) is ok.
 
-# also good - has correct precedence.
-if (v = next_value) == "hello" ...
+  ```ruby
+  # good
+  if v = array.grep(/foo/) ...
 
-Use ||= freely to initialize variables.
+  # also good - has correct precedence.
+  if (v = next_value) == "hello" ...
+  ```
 
-# set name to Bozhidar, only if it's nil or false, but don't use ||= to initialize boolean variables. (Consider what would happen if the current value happened to be false.)
-name ||= "Bozhidar"
+* Use `||=` freely to initialize variables, but don't use ||= to initialize boolean variables. (Consider what would happen if the current value happened to be false.)
+
+  ```ruby
+  # set name to Bozhidar, only if it's nil or false, 
+  name ||= "Bozhidar"
 
   # bad - would set enabled to true even if it was false
   enabled ||= true
 
   # good
   enabled = true if enabled.nil?
+  ```
 
+* Avoid using Perl-style special variables (like `$0-9`, `$`, etc. ). They are quite cryptic and their use in anything but one-liner scripts is discouraged. Prefer long form versions such as `$PROGRAM_NAME`.
 
-Avoid using Perl-style special variables (like $0-9, $, etc. ). They are quite cryptic and their use in anything but one-liner scripts is discouraged. Prefer long form versions such as $PROGRAM_NAME.
+* Never put a space between a method name and the opening parenthesis.
+  
+  ```ruby
+  # bad
+  f (3 + 2) + 1
 
-Never put a space between a method name and the opening parenthesis.
+  # good
+  f(3 + 2) + 1
+  ```
 
-# bad
-f (3 + 2) + 1
+* If the first argument to a method begins with an open parenthesis, always use parentheses in the method invocation. For example, write `f((3 + 2) + 1)`.
 
-# good
-f(3 + 2) + 1
-If the first argument to a method begins with an open parenthesis, always use parentheses in the method invocation. For example, write f((3 + 2) + 1).
+* You can use `_` for unused block parameters.
 
-You can use _ for unused block parameters.
+  ```ruby
+  result = hash.map { |_, v| v + 1 }
+  ```
 
-# bad
-result = hash.map { |k, v| v + 1 }
+* Don't use the `===` (threequals) operator to check types. `===` is mostly an implementation detail to support Ruby features like `case`, and it's not commutative. For example, `String === "hi"` is true and `"hi" === String` is false. Instead, use `is_a?` or `kind_of?` if you must.
 
-# good
-result = hash.map { |_, v| v + 1 }
-
-Don't use the === (threequals) operator to check types. === is mostly an implementation detail to support Ruby features like case, and it's not commutative. For example, String === "hi" is true and "hi" === String is false. Instead, use is_a? or kind_of? if you must.
-
-Refactoring is even better. It's worth looking hard at any code that explicitly checks types.
-
-
+  Refactoring is even better. It's worth looking hard at any code that explicitly checks types.
 
 
 Naming
+------
 
-Use snake_case for methods and variables.
+* Use `snake_case` for methods and variables.
 
-Use CamelCase for classes and modules. (Keep acronyms like HTTP, RFC, XML uppercase.)
+* Use `CamelCase` for classes and modules. (Keep acronyms like HTTP, RFC, XML uppercase.)
 
-Use SCREAMING_SNAKE_CASE for other constants.
+* Use `SCREAMING_SNAKE_CASE` for other constants.
 
-The names of predicate methods (methods that return a boolean value) should end in a question mark. (i.e. Array#empty?).
+* The names of predicate methods (methods that return a boolean value) should end in a question mark. (i.e. `Array#empty`?).
 
-The names of potentially "dangerous" methods (i.e. methods that modify self or the arguments, exit!, etc.) should end with an exclamation mark. Bang methods should only exist if a non-bang method exists. (More on this).
-
-
+* The names of potentially "dangerous" methods (i.e. methods that modify `self` or the arguments, `exit!`, etc.) should end with an exclamation mark. Bang methods should only exist if a non-bang method exists. ([More on this](http://dablog.rubypal.com/2007/8/15/bang-methods-or-danger-will-rubyist)).
 
 
 Classes
+-------
 
-Avoid the usage of class (@@) variables due to their unusual behavior in inheritance.
+* Avoid the usage of class (`@@`) variables due to their unusual behavior in inheritance.
 
-class Parent
-  @@class_var = "parent"
+  ```ruby
+  class Parent
+    @@class_var = "parent"
 
-  def self.print_class_var
-    puts @@class_var
+    def self.print_class_var
+      puts @@class_var
+    end
   end
-end
 
-class Child < Parent
-  @@class_var = "child"
-end
+  class Child < Parent
+    @@class_var = "child"
+  end
 
-Parent.print_class_var # => will print "child"
-As you can see all the classes in a class hierarchy actually share one class variable. Class instance variables should usually be preferred over class variables.
+  Parent.print_class_var # => will print "child"
+  ```
 
-Use def self.method to define singleton methods. This makes the methods more resistant to refactoring changes.
+  As you can see all the classes in a class hierarchy actually share one class variable. Class instance variables should usually be preferred over class variables.
 
+* Use `def self.method` to define singleton methods. This makes the methods more resistant to refactoring changes.
+
+  ```ruby
   class TestClass
     # bad
     def TestClass.some_method
@@ -338,8 +347,11 @@ Use def self.method to define singleton methods. This makes the methods more res
     def self.some_other_method
       # body omitted
     end
-Avoid class << self except when necessary, e.g. single accessors and aliased attributes.
+  ```
 
+* Avoid `class << self` except when necessary, e.g. single accessors and aliased attributes.
+
+  ```ruby
   class TestClass
     # bad
     class << self
@@ -366,85 +378,97 @@ Avoid class << self except when necessary, e.g. single accessors and aliased att
       # body omitted
     end
   end
-Indent the public, protected, and private methods as much the method definitions they apply to. Leave one blank line above them.
+  ```
 
+* Indent the `public`, `protected`, and `private` methods as much the method definitions they apply to. Leave one blank line above them and above words `protected` and `private`.
+
+  ```ruby
   class SomeClass
     def public_method
       # ...
     end
 
     private
+
     def private_method
       # ...
     end
   end
+  ```
 
 
+Exceptions
+----------
 
+* Don't use exceptions for flow of control.
 
-  Exceptions
+  ```ruby
+  # bad
+  begin
+    n / d
+  rescue ZeroDivisionError
+    puts "Cannot divide by 0!"
+  end
 
-Don't use exceptions for flow of control.
+  # good
+  if d.zero?
+    puts "Cannot divide by 0!"
+  else
+    n / d
+  end
+  ```
 
-# bad
-begin
-  n / d
-rescue ZeroDivisionError
-  puts "Cannot divide by 0!"
-end
+* Avoid rescuing the `Exception` class.
 
-# good
-if d.zero?
-  puts "Cannot divide by 0!"
-else
-  n / d
-end
-Avoid rescuing the Exception class.
+  ```ruby
+  # bad
+  begin
+    # an exception occurs here
+  rescue
+    # exception handling
+  end
 
-# bad
-begin
-  # an exception occurs here
-rescue
-  # exception handling
-end
-
-# still bad
-begin
-  # an exception occurs here
-rescue Exception
-  # exception handling
-end
-
-
+  # still bad
+  begin
+    # an exception occurs here
+  rescue Exception
+    # exception handling
+  end
+  ```
 
 
 Collections
+-----------
 
-Use Set instead of Array when dealing with unique elements. Set implements a collection of unordered values with no duplicates. This is a hybrid of Array's intuitive inter-operation facilities and Hash's fast lookup.
+* Use `Set` instead of `Array` when dealing with unique elements. `Set` implements a collection of unordered values with no duplicates. This is a hybrid of `Array`'s intuitive inter-operation facilities and `Hash`'s fast lookup.
 
-Use symbols instead of strings as hash keys.
+* Use symbols instead of strings as hash keys.
 
-# bad
-hash = { "one" => 1, "two" => 2, "three" => 3 }
+  ```ruby
+  # bad
+  hash = { "one" => 1, "two" => 2, "three" => 3 }
 
-# good
-hash = { :one => 1, :two => 2, :three => 3 }
-
-
+  # good
+  hash = { one: 1, two: 2, three: 3 }
+  ```
 
 
 Strings
+-------
 
-Prefer string interpolation instead of string concatenation:
+* Prefer string interpolation instead of string concatenation:
 
-# bad
-email_with_name = user.name + " <" + user.email + ">"
+  ```ruby
+  # bad
+  email_with_name = user.name + " <" + user.email + ">"
 
-# good
-email_with_name = "#{user.name} <#{user.email}>"
+  # good
+  email_with_name = "#{user.name} <#{user.email}>"
+  ```
 
-Avoid using String#+ when you need to construct large data chunks. Instead, use String#<<. Concatenation mutates the string instance in-place and is always faster than String#+, which creates a bunch of new string objects.
+* Avoid using `String#+` when you need to construct large data chunks. Instead, use `String#<<`. Concatenation mutates the string instance in-place and is always faster than `String#+`, which creates a bunch of new string objects.
 
+  ```ruby
   # good and also fast
   html = ""
   html << "<h1>Page title</h1>"
@@ -452,15 +476,15 @@ Avoid using String#+ when you need to construct large data chunks. Instead, use 
   paragraphs.each do |paragraph|
     html << "<p>#{paragraph}</p>"
   end
-
-
-
+  ```
 
 
 Regular Expressions
+-------------------
 
-Avoid using $1-9 as it can be hard to track what they contain. Named groups can be used instead.
+* Avoid using `$1-9` as it can be hard to track what they contain. Named groups can be used instead.
 
+  ```ruby
   # bad
   /(regexp)/ =~ string
   ...
@@ -470,13 +494,19 @@ Avoid using $1-9 as it can be hard to track what they contain. Named groups can 
   /(?<meaningful_var>regexp)/ =~ string
   ...
   process meaningful_var
-Be careful with ^ and $ as they match start/end of line, not string endings. If you want to match the whole string use: \A and \z.
+  ```
 
+* Be careful with `^` and `$` as they match start/end of line, not string endings. If you want to match the whole string use: `\A` and `\z`.
+
+  ```ruby
   string = "some injection\nusername"
   string[/^username$/]   # matches
   string[/\Ausername\z/] # don't match
-Use x modifier for complex regexps. This makes them more readable and you can add some useful comments. Just be careful as spaces are ignored.
+  ```
 
+* Use `x` modifier for complex regexps. This makes them more readable and you can add some useful comments. Just be careful as spaces are ignored.
+
+  ```ruby
   regexp = %r{
     start         # some text
     \s            # white space char
@@ -484,19 +514,21 @@ Use x modifier for complex regexps. This makes them more readable and you can ad
     (?:alt1|alt2) # some alternation
     end
   }x
+  ```
 
 
+Percent Literals
+----------------
 
+* Use `%w` freely.
 
+  ```ruby
+  STATES = %w(draft open closed)
+  ```
 
+* Use `%()` for single-line strings which require both interpolation and embedded double-quotes. For multi-line strings, prefer heredocs.
 
-  Percent Literals
-
-Use %w freely.
-
-STATES = %w(draft open closed)
-Use %() for single-line strings which require both interpolation and embedded double-quotes. For multi-line strings, prefer heredocs.
-
+  ```ruby
   # bad (no interpolation needed)
   %(<div class="text">Some text</div>)
   # should be "<div class=\"text\">Some text</div>"
@@ -511,36 +543,39 @@ Use %() for single-line strings which require both interpolation and embedded do
 
   # good (requires interpolation, has quotes, single line)
   %(<tr><td class="name">#{name}</td>)
-Use %r only for regular expressions matching more than one '/' character.
+  ```
 
-# bad
-%r(\s+)
+* Don't use `%r` for too short regular expressions.
 
-# good enough
-%r(^/(.*)$)
+  ```ruby
+  # bad
+  %r(\s+)
 
-# good
-%r(^/blog/2011/(.*)$)
+  # good enough
+  %r(^/(.*)$)
 
-
-
-
+  # good
+  %r(^/blog/2011/(.*)$)
+  ```
 
 
 Hashes
+------
 
-Prefer json-like syntax for Hash literals instead of the hashrocket style
+* Prefer json-like syntax for Hash literals instead of the hashrocket style.
 
-# bad
-user = {
-  :login => "defunkt",
-  :name => "Chris Wanstrath",
-  "followers-count" => 52390235
-} 
+  ```ruby
+  # bad
+  user = {
+    :login => "defunkt",
+    :name => "Chris Wanstrath",
+    "followers-count" => 52390235
+  } 
 
-# good
-user = {
-  login: "defunkt",
-  name: "Chris Wanstrath",
-  "followers-count" => 52390235
-}
+  # good
+  user = {
+    login: "defunkt",
+    name: "Chris Wanstrath",
+    "followers-count" => 52390235
+  }
+  ```
