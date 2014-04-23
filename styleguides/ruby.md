@@ -24,8 +24,11 @@ Coding Style
 ------------
 
 * Use soft-tabs with a two space indent.
+
 * Keep lines fewer than 80 characters.
+
 * Never leave trailing whitespace.
+
 * End each file with a blank newline.
 
 * Use spaces around operators, after commas, colons and semicolons, around { and before }.
@@ -39,34 +42,44 @@ Coding Style
 
 * No spaces after `(`, `[` or before `]`, `)`.
 
-some(arg).other
-[1, 2, 3].length
-No spaces after !.
+  ```ruby
+  some(arg).other
+  [1, 2, 3].length
+  ```
 
-!array.include?(element)
-Indent when as deep as case.
+* No spaces after `!`.
 
-case
-when song.name == "Misty"
-  puts "Not again!"
-when song.duration > 120
-  puts "Too long!"
-when Time.now.hour > 21
-  puts "It's too late"
-else
-  song.play
-end
+  ```ruby
+  !array.include?(element)
+  ```
 
-kind = case year
-       when 1850..1889 then "Blues"
-       when 1890..1909 then "Ragtime"
-       when 1910..1929 then "New Orleans Jazz"
-       when 1930..1939 then "Swing"
-       when 1940..1950 then "Bebop"
-       else "Jazz"
-       end
-Use empty lines between defs and to break up a method into logical paragraphs.
+* Indent `when` as deep as `case`.
 
+  ```ruby
+  case
+  when song.name == "Misty"
+    puts "Not again!"
+  when song.duration > 120
+    puts "Too long!"
+  when Time.now.hour > 21
+    puts "It's too late"
+  else
+    song.play
+  end
+
+  kind = case year
+         when 1850..1889 then "Blues"
+         when 1890..1909 then "Ragtime"
+         when 1910..1929 then "New Orleans Jazz"
+         when 1930..1939 then "Swing"
+         when 1940..1950 then "Bebop"
+         else "Jazz"
+         end
+  ```
+
+* Use empty lines between `def`s and to break up a method into logical paragraphs.
+
+  ```ruby
   def some_method
     data = initialize(options)
 
@@ -78,25 +91,27 @@ Use empty lines between defs and to break up a method into logical paragraphs.
   def some_method
     result
   end
-
-
-
-
+  ```
 
 
 Syntax
+------
 
-Use def with parentheses when there are arguments. Omit the parentheses when the method doesn't accept any arguments.
+* Use `def` with parentheses when there are arguments. Omit the parentheses when the method doesn't accept any arguments.
 
-   def some_method
-     # body omitted
-   end
+  ```ruby
+  def some_method
+    # body omitted
+  end
 
-   def some_method_with_arguments(arg1, arg2)
-     # body omitted
-   end
-Never use for, unless you know exactly why. Most of the time iterators should be used instead. for is implemented in terms of each (so you're adding a level of indirection), but with a twist - for doesn't introduce a new scope (unlike each) and variables defined in its block will be visible outside it.
+  def some_method_with_arguments(arg1, arg2)
+    # body omitted
+  end
+  ```
 
+* Never use `for`, unless you know exactly why. Most of the time iterators should be used instead. `for` is implemented in terms of `each` (so you're adding a level of indirection), but with a twist - `for` doesn't introduce a new scope (unlike `each`) and variables defined in its block will be visible outside it.
+
+  ```ruby
   arr = [1, 2, 3]
 
   # bad
@@ -106,26 +121,35 @@ Never use for, unless you know exactly why. Most of the time iterators should be
 
   # good
   arr.each { |elem| puts elem }
-Never use then for multi-line if/unless.
+  ```
 
-# bad
-if some_condition then
-  # body omitted
-end
+* Never use `then` for multi-line `if/unless`.
 
-# good
-if some_condition
-  # body omitted
-end
-Avoid the ternary operator (?:) except in cases where all expressions are extremely trivial. However, do use the ternary operator(?:) over if/then/else/end constructs for single line conditionals.
+  ```ruby
+  # bad
+  if some_condition then
+    # body omitted
+  end
 
+  # good
+  if some_condition
+    # body omitted
+  end
+  ```
+
+* Avoid the ternary operator (`?:`) except in cases where all expressions are extremely trivial. However, do use the ternary operator(`?:`) over `if/then/else/end` constructs for single line conditionals.
+
+  ```ruby
   # bad
   result = if some_condition then something else something_else end
 
   # good
   result = some_condition ? something : something_else
-Use one expression per branch in a ternary operator. This also means that ternary operators must not be nested. Prefer if/else constructs in these cases.
+  ```
 
+* Use one expression per branch in a ternary operator. This also means that ternary operators must not be nested. Prefer `if/else` constructs in these cases.
+
+  ```ruby
   # bad
   some_condition ? (nested_condition ? nested_something : nested_something_else) : something_else
 
@@ -135,12 +159,15 @@ Use one expression per branch in a ternary operator. This also means that ternar
   else
     something_else
   end
-The and and or keywords are banned. It's just not worth it. Always use && and || instead.
+  ```
 
-Avoid multi-line ?: (the ternary operator), use if/unless instead.
+* The `and` and `or` keywords are banned. It's just not worth it. Always use `&&` and `||` instead.
 
-Favor modifier if/unless usage when you have a single-line body.
+* Avoid multi-line `?:` (the ternary operator), use `if/unless` instead.
 
+* Favor modifier `if/unless` usage when you have a single-line body.
+
+  ```ruby
   # bad
   if some_condition
     do_something
@@ -148,24 +175,29 @@ Favor modifier if/unless usage when you have a single-line body.
 
   # good
   do_something if some_condition
-Never use unless with else. Rewrite these with the positive case first.
+  ```
 
-# bad
-unless success?
-  puts "failure"
-else
-  puts "success"
-end
+* Never use `unless` with `else`. Rewrite these with the positive case first.
 
-# good
-if success?
-  puts "success"
-else
-  puts "failure"
-end
+  ```ruby
+  # bad
+  unless success?
+    puts "failure"
+  else
+    puts "success"
+  end
 
-Prefer {...} over do...end for single-line blocks. Avoid using {...} for multi-line blocks (multiline chaining is always ugly). Always use do...end for "control flow" and "method definitions" (e.g. in Rakefiles and certain DSLs). Avoid do...end when chaining.
+  # good
+  if success?
+    puts "success"
+  else
+    puts "failure"
+  end
+  ```
 
+* Prefer `{...}` over `do...end` for single-line blocks. Avoid using `{...}` for multi-line blocks (multiline chaining is always ugly). Always use `do...end` for "control flow" and "method definitions" (e.g. in Rakefiles and certain DSLs). Avoid `do...end` when chaining.
+
+  ```ruby
   names = ["Bozhidar", "Steve", "Sarah"]
 
   # good
@@ -183,31 +215,39 @@ Prefer {...} over do...end for single-line blocks. Avoid using {...} for multi-l
   names.select do |name|
     name.start_with?("S")
   end.map { |name| name.upcase }
-Some will argue that multiline chaining would look OK with the use of {...}, but they should ask themselves - is this code really readable and can't the block's contents be extracted into nifty methods?
+  ```
 
-Avoid return where not required.
+Some will argue that multiline chaining would look OK with the use of `{...}`, but they should ask themselves - is this code really readable and can't the block's contents be extracted into nifty methods?
 
-# bad
-def some_method(some_arr)
-  return some_arr.size
-end
+* Avoid `return` where not required.
 
-# good
-def some_method(some_arr)
-  some_arr.size
-end
-Use spaces around the = operator when assigning default values to method parameters:
+  ```ruby
+  # bad
+  def some_method(some_arr)
+    return some_arr.size
+  end
 
-# bad
-def some_method(arg1=:default, arg2=nil, arg3=[])
-  # do something...
-end
+  # good
+  def some_method(some_arr)
+    some_arr.size
+  end
+  ```
 
-# good
-def some_method(arg1 = :default, arg2 = nil, arg3 = [])
-  # do something...
-end
-While several Ruby books suggest the first style, the second is much more prominent in practice (and arguably a bit more readable).
+* Use spaces around the `=` operator when assigning default values to method parameters:
+
+  ```ruby
+  # bad
+  def some_method(arg1=:default, arg2=nil, arg3=[])
+    # do something...
+  end
+
+  # good
+  def some_method(arg1 = :default, arg2 = nil, arg3 = [])
+    # do something...
+  end
+  ```
+
+  While several Ruby books suggest the first style, the second is much more prominent in practice (and arguably a bit more readable).
 
 Using the return value of = (an assignment) is ok.
 
