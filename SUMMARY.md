@@ -17,5 +17,6 @@
 
 * [Checklists](checklists/README.md)
     * [Web site development](checklists/website.md)
+    * [Требования к дизайну сайта](checklists/design_requirements.md)
 
 * Recomendations for members
