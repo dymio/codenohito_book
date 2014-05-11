@@ -15,4 +15,7 @@
     * Coffeescript
     * AngularJS
 
+* [Checklists](checklists/README.md)
+    * [Web site development](checklists/website.md)
+
 * Recomendations for members
