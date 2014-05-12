@@ -10,7 +10,7 @@
 * [Style guides](styleguides/README.md)
     * [Ruby](styleguides/ruby.md)
     * Rails (using https://github.com/bbatsov/rails-style-guide)
-    * HTML/CSS
+    * [CSS](styleguides/css.md)
     * Javascript
     * Coffeescript
     * AngularJS

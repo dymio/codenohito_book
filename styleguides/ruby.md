@@ -1,5 +1,5 @@
-Ruby Styleguide
-===============
+Ruby Style Guide
+================
 
 Based on [https://github.com/bbatsov/ruby-style-guide](https://github.com/bbatsov/ruby-style-guide) (love it, but too big for juniors) and [https://github.com/styleguide/ruby](https://github.com/styleguide/ruby) for documents structure.
 
