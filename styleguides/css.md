@@ -23,7 +23,7 @@ CSS Style Guide
     - Good candidates for ids: header, footer, slider, modal popups
     - Bad candidates for ids: navigation, item listings, item view pages (ex: issue view)
 
-* id selector must be on the start of rule
+* ID selector must be on the start of rule
 
         /* Bad */
         .main-nav #pointer { ... }
@@ -77,6 +77,8 @@ CSS Style Guide
         /* Recommended */
         margin: 0;
 
+* Use hex color codes `#000` unless using rgba instead case when you need to set opacity for color
+
 * Use 3 character hexadecimal notation where possible
 
         /* Not recommended */
@@ -84,8 +86,6 @@ CSS Style Guide
 
         /* Recommended */
         color: #ebc;
-
-* Avoid user agent detection as well as CSS “hacks”—try a different approach first
 
 * Use a space after a property name’s colon
 
@@ -116,7 +116,7 @@ CSS Style Guide
           margin-top: 1em;
         }
 
-* Use hex color codes `#000` unless using rgba instead case when you need to set opacity for color
+* Avoid user agent detection as well as CSS “hacks”—try a different approach first
 
 
 Properties sort order
