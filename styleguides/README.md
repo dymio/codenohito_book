@@ -1,6 +1,6 @@
-Styleguides
-===========
+Style Guides
+============
 
-[Ruby styleguide](ruby.md)
+[Ruby style guide](ruby.md)
 
-[CSS styleguide](css.md)
+[CSS style guide](css.md)
