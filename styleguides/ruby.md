@@ -56,20 +56,6 @@ Source Code Layout
   puts 'foo', 'bar' # this applies to puts in particular
   ```
 
-* Prefer a single-line format for class definitions with no body.
-
-  ```Ruby
-  # bad
-  class FooError < StandardError
-  end
-
-  # okish
-  class FooError < StandardError; end
-
-  # good
-  FooError = Class.new(StandardError)
-  ```
-
 * Use spaces around operators, after commas, colons and semicolons, around `{`
   and before `}`. Whitespace might be (mostly) irrelevant to the Ruby
   interpreter, but its proper use is the key to writing easily
