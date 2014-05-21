@@ -51,11 +51,11 @@ HTML Style Guide
 
 * Do not use entity references
 
-    <!-- Not recommended -->
-    The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
+        <!-- Not recommended -->
+        The currency symbol for the Euro is &ldquo;&eur;&rdquo;.
 
-    <!-- Recommended -->
-    The currency symbol for the Euro is “€”.
+        <!-- Recommended -->
+        The currency symbol for the Euro is “€”.
 
 * Omit type attributes for style sheets and scripts (if html5)
 
