@@ -21,3 +21,6 @@
     * [Требования к дизайну сайта](checklists/design_requirements.md)
 
 * Recomendations for members
+
+* [Helpers](helpers/README.md)
+    * [CarrierWave **resize_to** methods cheatsheeet](helpers/carrierwave_resize_to.md)
