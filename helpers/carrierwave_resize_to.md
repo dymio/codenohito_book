@@ -1,4 +1,4 @@
-CarrierWave resize_to* methods cheatsheeet
+CarrierWave resize_to methods cheatsheeet
 ==========================================
 
 Before we start: do not forget `include CarrierWave::MiniMagick` line for this methods.
@@ -33,26 +33,26 @@ One side using: `process :resize_to_limit => [260, nil]`
 
 ### Examples
 
-#### Bigger size landscape oriented image
+#### Bigger landscape oriented image
 
 <img src="assets/carrierwave_resize_to_hor_big.jpg" alt="Big landscape oriented image">
 
-#### Smaller size landscape oriented image
+#### Smaller landscape oriented image
 
 <img src="assets/carrierwave_resize_to_hor_sml.jpg" alt="Small landscape oriented image">
 
-#### Bigger size square image
+#### Bigger square image
 
 <img src="assets/carrierwave_resize_to_sqr_big.jpg" alt="Big square image">
 
-#### Smaller size square image
+#### Smaller square image
 
 <img src="assets/carrierwave_resize_to_sqr_sml.jpg" alt="Small square image">
 
-#### Bigger size portrait oriented image
+#### Bigger portrait oriented image
 
 <img src="assets/carrierwave_resize_to_ver_big.jpg" alt="Big portrait oriented image">
 
-#### Smaller size portrait oriented image
+#### Smaller portrait oriented image
 
 <img src="assets/carrierwave_resize_to_ver_sml.jpg" alt="Small portrait oriented image">
