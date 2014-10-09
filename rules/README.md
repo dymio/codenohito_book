@@ -3,4 +3,4 @@ Rules
 
 [Using Trello](trello.md)
 
-[Rails workflow](rails_workflow.rb)
+[Rails workflow](rails_workflow.md)

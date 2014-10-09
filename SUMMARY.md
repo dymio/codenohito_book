@@ -4,7 +4,7 @@
 
 * [Rules](rules/README.md)
     * Using Git
-    * [Rails workflow](rules/rails_workflow.rb)
+    * [Rails workflow](rules/rails_workflow.md)
     * [Using Trello](rules/trello.md)
     * Work with protected information
 
