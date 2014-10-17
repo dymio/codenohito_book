@@ -1,6 +1,52 @@
 CSS Style Guide
 ===============
 
+Methodology
+-----------
+
+При создании стилей следует мысленно разделять страницы на отдельные **блоки**. Шапка, поиск, навигация, последние статьи - всё это блоки.
+
+Стили для каждого блока следует писать таким образом, чтобы он был как можно более независим от других блоков. Для этого блоку выбирается семантическое имя класса: `.news-line`, `.main-nav`, `.tiles-collection`. Имена должны достаточно точно отражать назначение блока. Например, `.news-line` - блок для отображения новостей в линию, а блок `.tiles-collection` это коллекция ячеек не привязанная ни к какому объекту системы, так как в таком виде мы можем показывать, как услуги, так и товары или выполненные проекты, например.
+
+Для некоторых блоков может быть использован не класс, а id. Для этого блок должен быть вверху иерархии html и, обязательно, одним на странице. Это может быть `#header`, `#footer`, `#modal`. Если есть сомнения, использовать ли id или class, то лучше использовать class.
+
+Для вложенных **элементов** блоков можно использовать более простые названия классов: `.item`, `.descr`, если они требуются. Важно помнить, что в глобальной видимости такие простые селекторы не допустимы.
+
+```Css
+/* Good */
+.main-nav { ... }
+.main-nav .item { ... }
+
+/* Bad */
+.item { ... }
+
+/* OK */
+.product-item { .. }
+```
+
+В глобальной видимости допустим только один тип некаскадных селекторов - **хэлперы** (helpers). К ним можно отнести такие селекторы, как `.pull-left`, `.text-center`, `.centered`. Хэлперы объявляются до начала основных стилей. При добавлении нового хэлпера, добавляющий несёт ответственность за то, чтобы он не переопределил уже существующие стили. Вообще крайне не рекомендуется использовать хэлперы вообще. Но они могут сыграть хорошую службу при прототипировании.
+
+Если требуется использовать уже существующий блок, но с изменениями, то следует использовать **модификатор** - класс для этого элемента, который переопределит некоторые его свойства.
+
+```Css
+/* Навигация в шапке */
+.site-nav { float: right; }
+.site-nav .item { display: inline-block; }
+.site-nav .item a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: red; }
+
+/* Навигация в подвале с классом-модификатором 'in-footer' */
+.site-nav.in-footer { float: none; } 
+.site-nav.in-footer .item { display: block; margin-bottom: 2x; }
+  /* стили для ссылки остаются те же самые - в модификации не нуждаются */
+```
+
+
+Code
+----
+
 * ident by 2 spaces
 
 * Remove trailing white spaces
@@ -19,8 +65,8 @@ CSS Style Guide
         /* good */ 
         .units-list { ... }
 
-* Elements that occur exactly once inside a page should use IDs, otherwise, use classes. When in doubt, use a class name
-    - Good candidates for ids: header, footer, slider, modal popups
+* Elements that occur exactly once inside a page can use IDs, otherwise, use classes. When in doubt, use a class name.
+    - Good candidates for ids: header, footer, wrap, modal popups
     - Bad candidates for ids: navigation, item listings, item view pages (ex: issue view)
 
 * ID selector must be on the start of rule
@@ -89,12 +135,12 @@ CSS Style Guide
 
 * Use a space after a property name’s colon
 
-        /* Not recommended */
+        /* Bad */
         h3 {
           font-weight:bold;
         }
 
-        /* Recommended */
+        /* Good */
         h3 {
           font-weight: bold;
         }
@@ -193,7 +239,6 @@ Properties sort order
 
 ### Text
 
-* line-height
 * text-[align, decoration, emphasis, indent, justify, transform, outline, wrap, overflow, shadow]
 * vertical-align
 * white-space
@@ -205,6 +250,7 @@ Properties sort order
 * hyphens
 * pointer-events
 * font
+* line-height
 * font-*
 
 
