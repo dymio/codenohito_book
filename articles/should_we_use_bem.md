@@ -15,6 +15,7 @@ CSS обычного человека
 .main-nav .item { ... }
 .main-nav .item .descr { ... }
 ```
+
 </div>
 <div style="margin-right:52%;">
 CSS БЭМ'ера
@@ -24,6 +25,7 @@ CSS БЭМ'ера
 .main-nav__item { ... }
 .main-nav__item__descr { ... }
 ```
+
 </div>
 <br style="clear:both">
 
