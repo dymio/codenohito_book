@@ -7,27 +7,19 @@
 
 На самом деле, в практике, чаще встречается выдержка из БЭМ, когда используют только синтаксис классов (`.main-nav__item__descr`) и по-максимуму отказываются от каскадности в селекторах css:
 
-<div style="float:right;width:48%;">
-CSS обычного человека
-
-```Css
-.main-nav { ... }
-.main-nav .item { ... }
-.main-nav .item .descr { ... }
-```
-
-</div>
-<div style="margin-right:52%;">
-CSS БЭМ'ера
-
 ```Sass
 .main-nav { ... }
 .main-nav__item { ... }
 .main-nav__item__descr { ... }
 ```
 
-</div>
-<br style="clear:both">
+CSS обычного человека:
+
+```Css
+.main-nav { ... }
+.main-nav .item { ... }
+.main-nav .item .descr { ... }
+```
 
 
 Плюсы
