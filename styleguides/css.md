@@ -28,6 +28,7 @@ Methodology
 
 Если требуется использовать уже существующий блок, но с изменениями, то следует использовать **модификатор** - класс для этого элемента, который переопределит некоторые его свойства.
 
+
 ```Css
 /* Навигация в шапке */
 .site-nav { float: right; }
@@ -41,6 +42,16 @@ Methodology
 .site-nav.in-footer { float: none; } 
 .site-nav.in-footer .item { display: block; margin-bottom: 2x; }
   /* стили для ссылки остаются те же самые - в модификации не нуждаются */
+```
+
+Следует избегать слишком длинных каскадов в селекторах. Оптимальной длинной каскада будет от одного до трёх частей:
+
+```Css
+/* Good */
+.products .product-tile p { ... }
+
+/* Bad */
+.products ul .product-tile p a span { ... }
 ```
 
 
@@ -64,6 +75,8 @@ Code
 
         /* good */ 
         .units-list { ... }
+
+* Use only lowercase
 
 * Elements that occur exactly once inside a page can use IDs, otherwise, use classes. When in doubt, use a class name.
     - Good candidates for ids: header, footer, wrap, modal popups
@@ -259,3 +272,17 @@ Properties sort order
 * color
 * cursor
 * user-select
+
+
+Used materials
+--------------
+
+* [Github CSS styleguide](https://github.com/styleguide/css)
+
+* [Google Google HTML/CSS Style Guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
+
+* [Principles of writing consistent, idiomatic CSS by Nicolas Gallagher](https://github.com/necolas/idiomatic-css/)
+
+* [CSS Guidelines by Harry Roberts](http://cssguidelin.es/)
+
+* You can find more at [CSS Style Guides on CSS-TRICKS](http://css-tricks.com/css-style-guides/)
