@@ -25,3 +25,6 @@
 
 * [Helpers](helpers/README.md)
     * [CarrierWave **resize_to** methods cheatsheeet](helpers/carrierwave_resize_to.md)
+
+* Articles
+    * [Стоит ли использовать БЭМ](articles/should_we_use_bem.md)
