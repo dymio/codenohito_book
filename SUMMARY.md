@@ -25,6 +25,7 @@
 
 * [Helpers](helpers/README.md)
     * [CarrierWave **resize_to** methods cheatsheeet](helpers/carrierwave_resize_to.md)
+    * [Tuning clean Mac OS X Yosemite for Rails developer](helpers/yousemite_tuning_for_rails.md)
 
 * Articles
     * [Стоит ли использовать БЭМ](articles/should_we_use_bem.md)
