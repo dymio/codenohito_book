@@ -93,7 +93,7 @@ Tuning clean Mac OS X Yosemite for Rails developer
 * Add to `~/.bash_profile`:
 
     ```
-    # git completion and prompt (can find files at https://github.com/git/git/tree/master/contrib/completion)
+    # git completion and prompt (can find files at [git repository](https://github.com/git/git/tree/master/contrib/completion))
     source ~/.bash_extentions/git-completion.bash
     source ~/.bash_extentions/git-prompt.sh
     PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
@@ -119,11 +119,11 @@ Tuning clean Mac OS X Yosemite for Rails developer
 
 * Setup SublimeText:
     - Register :)
-    - Install package manager https://sublime.wbond.net/installation
+    - Install [package manager](https://sublime.wbond.net/installation)
     - Install Slim with package manager
     - Install CoffeeScript with package manager
     - Install Sass with package manager
-    - Install Polarise color scheme https://github.com/dymio/polarise_color_scheme
+    - Install [Polarise color scheme](https://github.com/dymio/polarise_color_scheme)
     - Update preferences:
 
         ```
