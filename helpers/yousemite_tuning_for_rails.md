@@ -31,7 +31,7 @@ Tuning clean Mac OS X Yosemite for Rails developer
 
 * Show hidden files in Finder:
 
-    ```bash
+    ```
     $ defaults write com.apple.finder AppleShowAllFiles TRUE
     $ killall Finder
     ```
@@ -44,7 +44,7 @@ Tuning clean Mac OS X Yosemite for Rails developer
     - launch and agree with license
     - install Command Line Tools
 
-        ```bash
+        ```
         $ xcode-select --install
         ```
 
@@ -52,25 +52,25 @@ Tuning clean Mac OS X Yosemite for Rails developer
 
 * Install Homebrew:
 
-    ```bash
+    ```
     $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     $ brew doctor
     ```
 
 * Install RVM:
 
-    ```bash
+    ```
     $ \curl -sSL https://get.rvm.io | bash -s stable
     ```
 
 * Install ruby:
 
-    ```bash
+    ```
     $ rvm install ruby-2.1.5
     ```
 
 * Install git:
-    ```bash
+    ```
     $ brew install git
     $ git config --global user.name "Ivan Dymkov"
     $ git config --global user.email mstrdymio@gmail.com
@@ -84,7 +84,7 @@ Tuning clean Mac OS X Yosemite for Rails developer
 
 * Install more tools and database:
 
-    ```bash
+    ```
     $ brew install imagemagick
     $ brew install ffmpeg
     $ brew install postgreql
@@ -92,7 +92,7 @@ Tuning clean Mac OS X Yosemite for Rails developer
 
 * Add to `~/.bash_profile`:
 
-    ```bash
+    ```
     # git completion and prompt (can find files at https://github.com/git/git/tree/master/contrib/completion)
     source ~/.bash_extentions/git-completion.bash
     source ~/.bash_extentions/git-prompt.sh
@@ -151,7 +151,7 @@ Tuning clean Mac OS X Yosemite for Rails developer
 
 * SSH:
 
-    ```bash
+    ```
     $ ssh-keygen -t rsa -C "mstrdymio@gmail.com"
     ```
 
