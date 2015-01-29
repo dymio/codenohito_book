@@ -44,6 +44,8 @@ If not - read [Mina documentation](http://nadarei.co/mina/setting_up_a_project.h
 
     * copy new static files, not included in repository, like `public/content` or some seed files to `shared/public` directory on the server;
 
+    * probably you will need to run command `ssh-add` before deploy
+
     * run in the project development directory:
 
             mina deploy
