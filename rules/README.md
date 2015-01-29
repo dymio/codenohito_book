@@ -5,4 +5,4 @@ Rules
 
 [Rails workflow](rails_workflow.md)
 
-[Deploy Rails project with mina](rails_deploy.md)
+[Deploy Rails project with Mina](rails_deploy.md)

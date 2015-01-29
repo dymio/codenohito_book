@@ -1,8 +1,8 @@
-Deploy Rails project with mina
+Deploy Rails project with Mina
 ==============================
 
-This document describes process of deploy Rails project with mina gem.
-You must have mina config file before start. If your project based on Mayak you alredy have this file in the `config` directory.
+This document describes process of deploy Rails project with `mina` gem.
+You must have mina config file before start. If your project based on Mayak you alredy have this file in the `config` directory and you need set correct params to it.
 If not - read [Mina documentation](http://nadarei.co/mina/setting_up_a_project.html).
 
 * **Prepare server** (just once, before first deploy):
@@ -14,12 +14,12 @@ If not - read [Mina documentation](http://nadarei.co/mina/setting_up_a_project.h
     * add file `database.yml` to `shared/config`, you can use this example for PostgreSQL:
 
             production:
-            adapter: postgresql
-            encoding: unicode
-            pool: 5
-            database: database_name
-            username: user_name
-            password: user_password
+              adapter: postgresql
+              encoding: unicode
+              pool: 5
+              database: database_name
+              username: user_name
+              password: user_password
 
     * configure your web-server for your project, as example - nginx & passenger virtual server config:
 
