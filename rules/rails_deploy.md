@@ -70,3 +70,5 @@ If not - read [Mina documentation](http://nadarei.co/mina/setting_up_a_project.h
         * if you want load dump, this command will help you:
 
                 psql database_name < db_dump_file.sql
+
+* Done
