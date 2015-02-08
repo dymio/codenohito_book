@@ -66,14 +66,14 @@ Tuning clean Mac OS X Yosemite for Rails developer
 * Install ruby:
 
     ```
-    $ rvm install ruby-2.1.5
+    $ rvm install ruby-head
     ```
 
 * Install git:
     ```
     $ brew install git
-    $ git config --global user.name "Ivan Dymkov"
-    $ git config --global user.email mstrdymio@gmail.com
+    $ git config --global user.name "George Clooney"
+    $ git config --global user.email somename@example.com
     $ git config --global pull.rebase true
     $ git config --global color.ui true
     $ git config --global alias.st status
@@ -87,8 +87,10 @@ Tuning clean Mac OS X Yosemite for Rails developer
     ```
     $ brew install imagemagick
     $ brew install ffmpeg
-    $ brew install postgreql
+    $ brew install postgresql
     ```
+
+    Can use [Postgres.app](http://postgresapp.com/) instead postgresql from homebrew.
 
 * Add to `~/.bash_profile`:
 
@@ -152,7 +154,7 @@ Tuning clean Mac OS X Yosemite for Rails developer
 * SSH:
 
     ```
-    $ ssh-keygen -t rsa -C "mstrdymio@gmail.com"
+    $ ssh-keygen -t rsa -C "somename@example.com"
     ```
 
 * Add new ssh public key to Github, Beanstalk, Bitbucket
