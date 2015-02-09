@@ -82,15 +82,22 @@ Tuning clean Mac OS X Yosemite for Rails developer
     $ git config --global alias.br branch
     ```
 
-* Install more tools and database:
+* Install more tools:
 
     ```
     $ brew install imagemagick
     $ brew install ffmpeg
-    $ brew install postgresql
     ```
 
-    Can use [Postgres.app](http://postgresapp.com/) instead postgresql from homebrew.
+* Install PostgreSQL database:
+
+    Use [Postgres.app](http://postgresapp.com/) instead postgresql from homebrew.
+    For correct work of `pg` gem add lines to `~/.bash_profile`:
+
+    ```
+    # Postgres.app path
+    export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
+    ```
 
 * Add to `~/.bash_profile`:
 
