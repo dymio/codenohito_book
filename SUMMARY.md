@@ -4,8 +4,10 @@
 
 * [Rules](rules/README.md)
     * Using Git
-    * [Rails workflow](rules/rails_workflow.md)
     * [Using Trello](rules/trello.md)
+    * [QA specialist instruction](rules/qa_specialist.md)
+    * [Remote member instruction](rules/remote_member.md)
+    * [Rails workflow](rules/rails_workflow.md)
     * Work with protected information
     * [Deploy Rails project with Mina](rules/rails_deploy.md)
 
