@@ -9,7 +9,12 @@ Solution for Ruby on Rails 4.2.0 with Mina as deploy gem and nginx + Passenger o
 1. Add new file `staging.rb` to folder `config/environments` of your application.
     Copy content of file `config/environments/production.rb` to created file.
 
-2. Add setting 'rails_env' with value 'staging' to mina deploy config file:
+2. Add environment secret key to `config/secrets.yml` file:
+
+        staging:
+          secret_key_base: e9b6b6e8ea7e9623116bb26f601389eb94f9ae8bf44aa01b97bc861d305159d1a967fcdeda87e744fde91d2b8543e8d58f2d04211621f094ec940212c8fd720b
+
+3. Add setting 'rails_env' with value 'staging' to mina deploy config file:
 
         set :rails_env, 'staging'
 
@@ -21,7 +26,7 @@ Solution for Ruby on Rails 4.2.0 with Mina as deploy gem and nginx + Passenger o
         set :branch, 'master'
         set :rails_env, 'staging'
 
-3. Add 'passenger_app_env' option to Nginx config server section:
+4. Add 'passenger_app_env' option to Nginx config server section:
 
         server {
             listen 80;
