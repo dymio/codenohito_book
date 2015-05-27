@@ -6,3 +6,5 @@ Helpers
 [Tuning clean Mac OS X Yosemite for Rails developer](yousemite_tuning_for_rails.md)
 
 [Rails Staging Environment](rails_staging_environment.md)
+
+[Enable NGINX cache for whole site](full_nginx_cache.md)
