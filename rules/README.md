@@ -10,3 +10,5 @@ Rules
 [Rails workflow](rails_workflow.md)
 
 [Deploy Rails project with Mina](rails_deploy.md)
+
+[Setup project on Debian server with NGINX ans Passenger](rules/setup_project_on_server.md)

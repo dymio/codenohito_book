@@ -10,6 +10,7 @@
     * [Rails workflow](rules/rails_workflow.md)
     * Work with protected information
     * [Deploy Rails project with Mina](rules/rails_deploy.md)
+    * [Setup project on Debian server with NGINX ans Passenger](rules/setup_project_on_server.md)
 
 * [Style guides](styleguides/README.md)
     * [Ruby](styleguides/ruby.md)
