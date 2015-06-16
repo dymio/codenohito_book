@@ -2,7 +2,7 @@ Configure server for Rails project
 ==================================
 
 Your task is create staging instance of our project (web-application) on the server.
-But you need also do preparations for future production instance and fast switching from staging.
+But you also need do preparations for future production instance and fast switching from staging.
 
 On our typical server we have NGINX web-server with Phusion Passenger and PostgresSQL.
 Deployment tool — [Mina](http://nadarei.co/mina).
@@ -13,7 +13,7 @@ And your **first step** is creating this subdomen and set his DNS `A` record wit
 In this document staging domen will be `example.proektmarketing.ru`.
 Production domen will be `example.com`.
 Name of project in this document — "Example project".
-In real project you must use correct semantic name.
+In a real project you must use correct semantic name.
 
 
 Add system user special for the project
@@ -33,7 +33,7 @@ Under new user add your rsa key to ssh's authorized_keys:
     # add the line with content of `id_rsa.pub` from client
     chmod 600 ~/.ssh/authorized_keys
 
-Right now you can access to user from your local computer without entering password.
+Right now you have access to user from your local computer without entering password.
 
 
 Prepare directory of project
@@ -65,7 +65,7 @@ By default we use production domen without 'www' and subdomen of 'proektmarketin
 
     server {
         listen 80;
-        server_name example.com example.proektmarketing.ru;
+        server_name example.proektmarketing.ru example.com;
         root /home/exampleuser/www/example/current/public;
         passenger_enabled on;
 
@@ -118,11 +118,11 @@ Under root user enter to `psql` (PostgreSQL console) as `postgres` user:
 
 Create PostgreSQL user for the application with same username as created system user:
 
-    CREATE USER exampleuser WITH PASSWORD 'Rcd24_skdjfYERBdd';
+    CREATE USER exampleuser WITH PASSWORD 'S0me_HarD_PASSW0RD';
 
 Create new database with correct collation and with new user as owner:
 
-    CREATE DATABASE example_databse WITH ENCODING 'UTF8' LC_COLLATE='ru_RU.UTF8' LC_CTYPE='ru_RU.UTF8' TEMPLATE=template0 OWNER exampleuser;
+    CREATE DATABASE example_database WITH ENCODING 'UTF8' LC_COLLATE='ru_RU.UTF8' LC_CTYPE='ru_RU.UTF8' TEMPLATE=template0 OWNER exampleuser;
 
 Log out from psql and postgres user:
 
@@ -147,7 +147,7 @@ Add config to file with correct database name:
       adapter: postgresql
       encoding: unicode
       pool: 5
-      database: example_databse
+      database: example_database
 
 By default you don't need to set username and password if username of PosgreSQL user the same as current system user.
 
@@ -159,7 +159,7 @@ Under created user run command
 
     ssh git@bitbucket.org -A
 
-Where instead 'git@bitbucket.org' must be user@domen of your repository (if you use not Bitbucket of course).
+Instead 'git@bitbucket.org' must be user@domen of your repository (if you use not Bitbucket of course).
 This step will save you from future errors in deploy process.
 
 
