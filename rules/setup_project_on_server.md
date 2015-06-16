@@ -1,79 +1,177 @@
-Setup project on Debian server with NGINX ans Passenger
-=======================================================
+Configure server for Rails project
+==================================
 
-Create file named as project name in `/etc/nginx/sites-available` directory:
+Your task is create staging instance of our project (web-application) on the server.
+But you need also do preparations for future production instance and fast switching from staging.
+
+On our typical server we have NGINX web-server with Phusion Passenger and PostgresSQL.
+
+By default we use subdomen of 'proektmarketing.ru' for staging instance.
+And your **first step** is creating this subdomen and set his DNS `A` record with server IP adress.
+
+In this document staging domen will be `example.proektmarketing.ru`.
+Production domen will be `example.com`.
+Name of project in this document — "Example project".
+In real project you must use correct semantic name.
+
+
+Add system user special for the project
+---------------------------------------
+
+Under root create new user:
+
+    adduser exampleuser
+    usermod -a -G www-data exampleuser
+
+Under new user add your rsa key to ssh's authorized_keys:
+
+    mkdir ~/.ssh
+    chmod 700 ~/.ssh
+    cd ~/.ssh
+    vim authorized_keys
+    # add the line with content of `id_rsa.pub` from client
+    chmod 600 ~/.ssh/authorized_keys
+
+Right now you can access to user from your local computer without entering password.
+
+
+Prepare directory of project
+----------------------------
+
+Create directory for the project on the server under created user:
+
+    mkdir -p ~/www/example
+
+Then you need to create dummy page for testing before first deployment:
+
+    mkdir -p ~/www/example/dummy/public
+    vim ~/www/example/dummy/public/index.html
+    # Any text inside file
+    ln -s ~/www/example/dummy ~/www/example/current
+
+
+Configure NGINX
+---------------
+
+Under root user you need to create new file in available sites NGINX directory:
 
     vim /etc/nginx/sites-available/example
 
-Content of file:
+File contents virtual server config for our project.
+By default we use production domen without 'www' and subdomen of 'proektmarketing.ru' for staging version:
 
-    ## Example
+    ## Example project
+
     server {
         listen 80;
-        server_name www.example.com example.proektmarketing.ru;
-        root /home/greghouse/www/klinika/current/public;
+        server_name example.com example.proektmarketing.ru;
+        root /home/exampleuser/www/example/current/public;
         passenger_enabled on;
 
-    #    rewrite ^(/action).*$ http://www.clinsev.ru/clinics/v-severnom/offers permanent;
-    #    rewrite ^(/kontacts.html).*$ http://www.clinsev.ru/contacts permanent;
-    #    rewrite ^(/proezd.html).*$ http://www.clinsev.ru/contacts permanent;
-    #    rewrite ^(/dokument.html).*$ http://www.clinsev.ru/clinics/v-severnom/documents permanent;
-    #    rewrite ^(/licenzii.html).*$ http://www.clinsev.ru/clinics/v-severnom/documents permanent;
-    #    rewrite ^(/vopros.html).*$ http://www.clinsev.ru/faq permanent;
-    #    rewrite ^(/otzivi.html).*$ http://www.clinsev.ru/faq permanent;
-    #    rewrite ^(/articles).*$ http://www.clinsev.ru/publications permanent;
-    #    rewrite ^(/nevrolog.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/nevrologiya permanent;
-    #    rewrite ^(/endokrinolog.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/endokrinologiya permanent;
-    #    rewrite ^(/ortoped-hirurg-baev.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/travmatolog-ortoped permanent;
-    #    rewrite ^(/ginekolog.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/ginekologiya permanent;
-    #    rewrite ^(/diagnostika.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/terapevt permanent;
-    #    rewrite ^(/mammolog-onkolog-golberg.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/onkolog-mammolog permanent;
-    #    rewrite ^(/vrosshiy-nogot.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/hirurgiya permanent;
-    #    rewrite ^(/urolog-troyakov.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/urologiya permanent;
-    #    rewrite ^(/dermatovenerolog-boguslavskaya.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/dermatovenerologiya permanent;
-    #    rewrite ^(/terapevt-malkovish.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/terapevt permanent;
-    #    rewrite ^(/vrach-hirurg.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/hirurgiya permanent;
-    #    rewrite ^(/travmatolog-ortoped.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/travmatolog-ortoped permanent;
-    #    rewrite ^(/vrach-uzd-ogincova.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/dnevnoy-statsionar permanent;
-    #    rewrite ^(/mammolog.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/onkolog-mammolog permanent;
-    #    rewrite ^(/dms.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/dnevnoy-statsionar permanent;
-    #    rewrite ^(/uslugi-terapevta.html).*$ http://www.clinsev.ru/services/terapevt permanent;
-    #    rewrite ^(/uslugi-endokrinologa.html).*$ http://www.clinsev.ru/services/endokrinologiya permanent;
-    #    rewrite ^(/uslugi-nevrologa.html).*$ http://www.clinsev.ru/services/nevrologiya permanent;
-    #    rewrite ^(/uslugi/165-uzi-arterij-i-ven-nizhnih-konechnostej.html).*$ http://www.clinsev.ru/services/uzi-diagnostika permanent;
-    #    rewrite ^(/uslugi/161-rentgen.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/rentgenologiya permanent;
-    #    rewrite ^(/uslugi/169-analiz-na-gruppu-krovi-i-rezus-faktor.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/dnevnoy-statsionar permanent;
-    #    rewrite ^(/uslugi/166-kardiolog.html).*$ http://www.clinsev.ru/services/kardiologiya permanent;
-    #    rewrite ^(/uslugi/55-uslugi-uzi.html).*$ http://www.clinsev.ru/services/uzi-diagnostika permanent;
-    #    rewrite ^(/uslugi/157-stoimost-analizov-krovi-na-spid-i-vich.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/dnevnoy-statsionar permanent;
-    #    rewrite ^(/uslugi/164-uzi-shhitovidnoj-zhelezy.html).*$ http://www.clinsev.ru/services/uzi-diagnostika permanent;
-    #    rewrite ^(/uslugi/158-biohimicheskij-analiz-krovi.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/dnevnoy-statsionar permanent;
-    #    rewrite ^(/uslugi/167-analiz-krovi-na-sahar.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/dnevnoy-statsionar permanent;
-    #    rewrite ^(/uslugi/168-analiz-mochi.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/dnevnoy-statsionar permanent;
-    #    rewrite ^(/uslugi/156-analiz-krovi-na-onkomarkery.html).*$ http://www.clinsev.ru/clinics/v-severnom/services/dnevnoy-statsionar permanent;
-    #    rewrite ^(/uslugi/163-uzi-sosudov.html).*$ http://www.clinsev.ru/services/uzi-diagnostika permanent;
-    #    rewrite ^(/uslugi.html).*$ http://www.clinsev.ru/clinics/v-severnom/services permanent;
-    #    rewrite ^(/specialist)[^s]?.*$ http://www.clinsev.ru/clinics/v-severnom/specialists permanent;
-    #    rewrite ^(/news.html).*$ http://www.clinsev.ru/publications permanent;
+        #- Maybe we'll need rewrites from old urls to new after publishing.
+        #- There are examples:
+        # rewrite ^(/action/2014/11/23/matras).*$ http://example.com/offers/new_mattress permanent;
+        # rewrite ^(/action).*$ http://example.com/offers permanent;
+        # rewrite ^(/kontacts.html).*$ http://example.com/contacts permanent;
+    }
 
-    }
     server {
-        # to-www redirect
-        server_name clinsev.ru;
-        rewrite ^(.*) http://www.clinsev.ru$1 permanent;
+        # non-www redirect
+        server_name www.example.com;
+        rewrite ^(.*) http://example.com$1 permanent;
     }
+
     # server {
     #     # from staging redirect
-    #     server_name klinika.proektmarketing.ru;
-    #     rewrite ^(.*) http://www.clinsev.ru$1 permanent;
+    #     server_name example.proektmarketing.ru;
+    #     rewrite ^(.*) http://example.com$1 permanent;
     # }
-    server {
-        # old version (clinsev.ru)
-        server_name old.clinsev.ru www.old.clinsev.ru;
-        root /home/greghouse/www/klinika_old_clinsev;
-    }
+
+    # server {
+    #     # old version
+    #     server_name old.example.com;
+    #     root /home/exampleuser/www/old_example;
+    # }
 
 Create symbolic link of file in directory `/etc/nginx/sites-enabled`:
 
     cd /etc/nginx/sites-enabled
     ln -s ../sites-available/example example
+
+Restart NGINX for using this config:
+
+    service nginx restart
+
+On this step you already can see dummy html on
+[example.proektmarketing.ru](http://example.proektmarketing.ru)
+if new DNS records of subdomen already active.
+
+
+Create a PostgreSQL user and database
+-------------------------------------
+
+Under root user enter to `psql` (PostgreSQL console) as `postgres` user:
+
+    su - postgres
+    psql
+
+Create PostgreSQL user for the application with same username as created system user:
+
+    CREATE USER exampleuser WITH PASSWORD 'Rcd24_skdjfYERBdd';
+
+Create new database with correct collation and with new user as owner:
+
+    CREATE DATABASE example_databse WITH ENCODING 'UTF8' LC_COLLATE='ru_RU.UTF8' LC_CTYPE='ru_RU.UTF8' TEMPLATE=template0 OWNER exampleuser;
+
+Log out from psql and postgres user:
+
+    \q
+    exit
+
+
+Create database config for the application
+------------------------------------------
+
+Create config directory for the project on the server under created user:
+
+    mkdir -p ~/www/example/shared/config
+
+Create database config file:
+
+    vim ~/www/example/shared/config/database.yml
+
+Add config to file with correct database name:
+
+    production:
+      adapter: postgresql
+      encoding: unicode
+      pool: 5
+      database: example_databse
+
+By default you don't need to set username and password if username of PosgreSQL user the same as current system user.
+
+
+Prepare connection to the repository
+------------------------------------
+
+Under created user run command
+
+    ssh git@bitbucket.org -A
+
+Where instead 'git@bitbucket.org' must be user@domen of your repository (if you use not Bitbucket of course).
+This step will save you from future errors in deploy process.
+
+
+First deploy
+------------
+
+Make a correct `mina` config.
+[Config from Mayak](https://github.com/dymio/mayak/blob/master/config/deploy.rb) is the best example.
+
+Run `mina setup`.
+
+If all settings are correct this command will not give you any errors.
+
+Run `mina deploy` or `mina deploy to=production` (depends on you settings).
+
+Profit.
