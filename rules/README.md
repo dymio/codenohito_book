@@ -11,4 +11,4 @@ Rules
 
 [Deploy Rails project with Mina](rails_deploy.md)
 
-[Setup project on Debian server with NGINX ans Passenger](rules/setup_project_on_server.md)
+[Configure server for Rails project](rails_server_config.md)

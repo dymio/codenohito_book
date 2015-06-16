@@ -5,6 +5,7 @@ Your task is create staging instance of our project (web-application) on the ser
 But you need also do preparations for future production instance and fast switching from staging.
 
 On our typical server we have NGINX web-server with Phusion Passenger and PostgresSQL.
+Deployment tool — [Mina](http://nadarei.co/mina).
 
 By default we use subdomen of 'proektmarketing.ru' for staging instance.
 And your **first step** is creating this subdomen and set his DNS `A` record with server IP adress.
