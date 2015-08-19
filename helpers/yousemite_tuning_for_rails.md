@@ -5,12 +5,13 @@ Tuning clean Mac OS X Yosemite for Rails developer
 
 * Install applications:
     - XCode
-    - iTerm
-    - Skype
-    - Google Chrome
-    - Firefox
-    - ImageOptim
-    - Sublime Text, RubyMine *as code editor*
+    - [iTerm](https://www.iterm2.com/)
+    - [Skype](http://www.skype.com/ru/download-skype)
+    - [Google Chrome](http://www.google.com/chrome/)
+    - [Firefox](https://www.mozilla.org/en-US/firefox)
+    - [ImageOptim](https://imageoptim.com/)
+    - [ImageAlpha](http://pngmini.com/)
+    - [Sublime Text](http://www.sublimetext.com/), [RubyMine](https://www.jetbrains.com/ruby/) *as code editor*
 
 * Optional applications:
     - Photoshop
@@ -19,13 +20,15 @@ Tuning clean Mac OS X Yosemite for Rails developer
     - Cyberduck *as FTP, SFTP client*
     - Marked *as markdown reader*
     - Dash
-    - YandexDisk, Dropbox *as cloud storage*
-    - Sequel Pro, pgAdmin as *database admin tool*
+    - [YandexDisk](https://disk.yandex.com/download), [Dropbox](https://www.dropbox.com) *as cloud storage*
+    - [Sequel Pro](http://www.sequelpro.com/download), [pgAdmin](http://www.pgadmin.org/download/) as *database admin tool*
     - Skitch *as screenshoter*
-    - Transmission *as torrent tracker*
-    - VLC *as media player*
+    - [Transmission](http://www.transmissionbt.com/download/) *as torrent tracker*
+    - [VLC](http://www.videolan.org/vlc/index.html) *as media player*
     - DaisyDisk *as disk space analyzer*
     - Gemini *as duplicate finder*
+    - [TunnelBear](https://www.tunnelbear.com/download/) *as easy VPN tunelling*
+    - [Parallels Desktop](http://www.parallels.com/ru/products/desktop/download/) *as virtualization tool*
 
 * Disable automatically spelling correction: Preferences -> Keyboard -> Text -> "Correct spelling automatically"
 
@@ -104,7 +107,7 @@ Tuning clean Mac OS X Yosemite for Rails developer
     ```
     # Add `~/bin` to the `$PATH`
     export PATH="$HOME/bin:$PATH";
-    
+
     # git completion and prompt (can find files at [git repository](https://github.com/git/git/tree/master/contrib/completion))
     source ~/.bash_extentions/git-completion.bash
     source ~/.bash_extentions/git-prompt.sh
