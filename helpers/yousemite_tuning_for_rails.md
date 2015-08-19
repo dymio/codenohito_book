@@ -102,6 +102,9 @@ Tuning clean Mac OS X Yosemite for Rails developer
 * Add to `~/.bash_profile`:
 
     ```
+    # Add `~/bin` to the `$PATH`
+    export PATH="$HOME/bin:$PATH";
+    
     # git completion and prompt (can find files at [git repository](https://github.com/git/git/tree/master/contrib/completion))
     source ~/.bash_extentions/git-completion.bash
     source ~/.bash_extentions/git-prompt.sh
@@ -140,6 +143,8 @@ Tuning clean Mac OS X Yosemite for Rails developer
           "auto_complete": false,
           "auto_match_enabled": false,
           "color_scheme": "Packages/Color Scheme - Default/Polarise.tmTheme",
+          "default_encoding": "UTF-8",
+          "detect_indentation": false,
           "fallback_encoding": "Cyrillic (Windows 1251)",
           "font_size": 12.0,
           "ignored_packages":
@@ -152,6 +157,8 @@ Tuning clean Mac OS X Yosemite for Rails developer
             80,
             140
           ],
+          "show_encoding": true,
+          "show_line_endings": true,
           "tab_size": 2,
           "translate_tabs_to_spaces": true,
           "word_wrap": true
