@@ -37,7 +37,8 @@ Deploy process
 
     * or (if your project based on Mayak) run from project development directory
 
-            mina rails:db_migrate rails:db_seed
+            mina rails:db_migrate
+            mina rails:db_seed
 
     * if you want load dump, this command will help you:
 

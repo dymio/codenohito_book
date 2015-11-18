@@ -16,6 +16,23 @@ Name of project in this document — "Example project".
 In a real project you must use correct semantic name.
 
 
+Short description of process
+----------------------------
+
+1. Создаём пользователя под проект с именем, намекающим на название проекта, но с ним не совпадающее.
+   Например, showman для проекта SnegGroup или greghouse для проекта Klinika.
+
+2. Создаём директорию будущего проекта в `~/www/`.
+
+3. Добавляем конфиг server для проекта.
+
+4. Добавляем PostgreSQL пользователя для проекта, имя которого совпадает с именем созданного пользователя системы, но пароль другой.
+
+5. Добавляем базу данных для проекта.
+
+6. Setup и деплой.
+
+
 Add system user special for the project
 ---------------------------------------
 
