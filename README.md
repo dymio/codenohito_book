@@ -1,35 +1,23 @@
-CodeNoHito Book
+{code}の人 Book
 ===============
 
-Book of rules, recomendations and style guides for CodeNoHito members.
+CodeNoHito (_{code}の人_) &mdash; это команда специалистов, которые собрались
+чтобы, работая вместе, создавать лучшие программные продукты, чем они смогли бы
+сделать поодиночке.
+Эта «книга» является собранием знаний и практик команды.
 
-Look at [SUMMARY](SUMMARY.md) for table of contents.
+Для любой коллекции знаний необходимо иметь единую точку входа, которая бы могла
+описать содержание коллекции, указать на акценты и напомнить о самых важных
+данных. Эта страница будет являться такой «точкой». Любой новый член команды
+должен изучить её внимательно. Каждому члену команды стоит периодически сюда
+возвращаться, чтобы обновить знания и вспомнить забытое.
 
+Как нет ничего идеального, так и все материалы этой «книги» могут быть улучшены
+или исправлены. Вклад каждого члена команды приветствуется. Сделать этот вклад
+можно с помощью pull-request'а.
 
+Полное содержание материалов собрано в файле [SUMMARY](SUMMARY.md).
 
-
-### To-Do
-
-* check https://github.com/bbatsov/ruby-style-guide one more time
-* Rails style guide using https://github.com/bbatsov/rails-style-guide
-* HTML/CSS style guide
-    * http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml
-    * https://github.com/styleguide/css
-    * https://github.com/necolas/idiomatic-css/
-    * more?
-* JavaScript style guide
-    * http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml
-    * https://github.com/styleguide/javascript
-    * http://contribute.jquery.org/style-guide/js/
-    * https://github.com/rwaldron/idiomatic.js/
-    * more?
-* CoffeeScript style guide
-    * https://github.com/polarmobile/coffeescript-style-guide
-* AngularJS style guide ( https://google-styleguide.googlecode.com/svn/trunk/angularjs-google-style.html );
-* parse https://github.com/styleguide/
-* parse https://sites.google.com/site/jurbat/Home or http://brain.informagic.ru/
-* choose License
-* prepare for https://github.com/GitbookIO/gitbook
-* checklist of site creation (with SEO)
-* recomendations (time tracking, password keeper as example)
-* list of learning materials
+В основе {code}の人 лежит своя [философия](philosophy/README.md). Она определяет
+цель, которая стоит перед командой. Постулаты философии помогают делать выбор
+работы, инструментов и определять людей, которые подходят для {code}の人.
