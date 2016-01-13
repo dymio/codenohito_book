@@ -37,7 +37,7 @@
     * [Стоит ли использовать БЭМ](articles/should_we_use_bem.md)
 
 
-### To-Do
+### ToDo
 
 * check https://github.com/bbatsov/ruby-style-guide one more time
 * Rails style guide using https://github.com/bbatsov/rails-style-guide
