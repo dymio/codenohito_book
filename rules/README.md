@@ -16,3 +16,5 @@ Rules
 [Deploy Rails project with Mina](rails_deploy.md)
 
 [Configure server for Rails project](rails_server_config.md)
+
+[Cбор и хранение бэкапов](backups.md)

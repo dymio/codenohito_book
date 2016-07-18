@@ -13,6 +13,7 @@
     * Work with protected information
     * [Deploy Rails project with Mina](rules/rails_deploy.md)
     * [Configure server for Rails project](rules/rails_server_config.md)
+    * [Cбор и хранение бэкапов](rules/backups.md)
 
 * [Style guides](styleguides/README.md)
     * [Ruby](styleguides/ruby.md)
