@@ -108,7 +108,7 @@ Tuning clean Mac OS X Yosemite for Rails developer
     # Add `~/bin` to the `$PATH`
     export PATH="$HOME/bin:$PATH";
 
-    # git completion and prompt (can find files at [git repository](https://github.com/git/git/tree/master/contrib/completion))
+    # git completion and prompt (can find files at git repository dir https://github.com/git/git/tree/master/contrib/completion)
     source ~/.bash_extentions/git-completion.bash
     source ~/.bash_extentions/git-prompt.sh
     PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
@@ -131,6 +131,10 @@ Tuning clean Mac OS X Yosemite for Rails developer
     alias subl="/Applications/Sublime\ Text\ 2.app/Contents/MacOS/Sublime\ Text\ 2"
     alias redis='redis-server /usr/local/etc/redis.conf'
     ```
+
+    Then copy files 'git-completion.bash' and 'git-prompt.sh' from
+    [this repository directory](https://github.com/git/git/tree/master/contrib/completion)
+    to the directory `~/.bash_extentions/`.
 
 * Setup SublimeText:
     - Register :)
