@@ -168,6 +168,7 @@ Tuning clean Mac OS X Yosemite for Rails developer
           "show_line_endings": true,
           "tab_size": 2,
           "translate_tabs_to_spaces": true,
+          "trim_trailing_white_space_on_save": true,
           "word_wrap": true
         }
         ```
