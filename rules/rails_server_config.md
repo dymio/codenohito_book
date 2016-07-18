@@ -86,6 +86,12 @@ By default we use production domen without 'www' and subdomen of 'proektmarketin
         root /home/exampleuser/www/example/current/public;
         passenger_enabled on;
 
+        # gzip config
+        gzip_vary on;
+        gzip_proxied any;
+        gzip_min_length 256;
+        gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript application/x-javascript;
+
         #- Maybe we'll need rewrites from old urls to new after publishing.
         #- There are examples:
         # rewrite ^(/action/2014/11/23/matras).*$ http://example.com/offers/new_mattress permanent;
