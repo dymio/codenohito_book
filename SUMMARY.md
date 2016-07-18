@@ -5,6 +5,7 @@
 * [Rules](rules/README.md)
     * Using Git
     * [Using Trello](rules/trello.md)
+    * [Bug fixing protocol](rules/bugfixing.md)
     * [Code Review guide](rules/code_review_guide.md)
     * [Ведущий программист, обязанности](rules/lead_programmer.md)
     * [QA specialist instruction](rules/qa_specialist.md)

@@ -3,6 +3,8 @@ Rules
 
 [Using Trello](trello.md)
 
+[Bug fixing protocol](bugfixing.md)
+
 [Code Review guide](code_review_guide.md)
 
 [Ведущий программист, обязанности](lead_programmer.md)
