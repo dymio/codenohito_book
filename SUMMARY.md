@@ -1,6 +1,6 @@
 # Summary
 
-* [Philosophy of {code}の人](philosophy/README.md)
+* [Philosophy of {code}の人](philosophy.md)
 
 * [Rules](rules/README.md)
     * Using Git
