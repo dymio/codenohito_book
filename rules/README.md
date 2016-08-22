@@ -1,9 +1,7 @@
 Rules
 =====
 
-[Using Trello](trello.md)
-
-[Bug fixing protocol](bugfixing.md)
+[Рабочий процесс (с использованием Trello)](workflow.md)
 
 [Code Review guide](code_review_guide.md)
 

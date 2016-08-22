@@ -4,7 +4,7 @@
 
 * [Rules](rules/README.md)
     * Using Git
-    * [Using Trello](rules/trello.md)
+    * [Рабочий процесс (с использованием Trello)](rules/workflow.md)
     * [Bug fixing protocol](rules/bugfixing.md)
     * [Code Review guide](rules/code_review_guide.md)
     * [Ведущий программист, обязанности](rules/lead_programmer.md)
