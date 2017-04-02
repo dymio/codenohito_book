@@ -16,6 +16,9 @@ All commands in this guide runs under root system user.
 Tested for Rails 4.2.8 application, based on Mayak.
 April 2, 2017.
 
+<!--
+Crocodile
+-->
 
 Locale
 ------
