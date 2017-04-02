@@ -53,7 +53,7 @@ Add to the `/etc/ssh/sshd_config` config file two lines
 The first one set 600 seconds (10 minutes) timeout before breaking a connection.
 The second one set count of checkalive messages to 3.
 In sum it will give 30 minutes before disconnection by server.
-Dj not forget to restart ssh server:
+Do not forget to restart ssh server:
 
     /etc/init.d/ssh restart
 
@@ -62,7 +62,7 @@ Prepare system for the next steps
 ---------------------------------
 
     apt-get update && apt-get upgrade
-    apt-get install gcc make build-essential curl git-core imagemagick
+    apt-get install gcc make build-essential curl git-core
     mkdir ~/packages
 
 
@@ -82,8 +82,7 @@ Hint: type `\q` to exit from the PostgreSQL console.
 Ruby installation
 -----------------
 
-Install ruby from the sources.
-Install libraries first:
+Install ruby from the sources, but install libraries first:
 
     apt-get install libc6 libc6-dev libssl-dev libgdbm3 libgdbm-dev libgmp10 \
                     libncurses5 zlib1g-dev libyaml-0-2 libyaml-dev \
@@ -153,7 +152,11 @@ There is example of virtual server config with passenger enabled:
 ImageMagick the newest version installation
 -------------------------------------------
 
-Some old versions of ImageMagick darken images when processing.
+Short way is install with apt-get:
+
+    apt-get install imagemagick
+
+But some old versions of ImageMagick darken images when processing.
 To avoid this behavior install the newest version of ImageMagick from
 the sources. The
 [official instruction](https://www.imagemagick.org/script/install-source.php).
