@@ -13,7 +13,8 @@ Other major components:
 
 All commands in this guide runs under root system user.
 
-Tested for Rails 4.2.8 application, based on Mayak.
+Tested on Rails 4.2.8 application, based on Mayak.
+
 April 2, 2017.
 
 
@@ -30,7 +31,7 @@ any operations with russian language. Database search and order as example.
 You might need to run `apt-get update && apt-get install locales` if
 `dpkg-reconfigure locales` gives you errors.
 
-After all command relogin and try `locale -a` — should give no errors, like:
+Relogin and try `locale -a` to test locale. Should gives no errors, like:
 
     locale -a
       C
@@ -49,10 +50,10 @@ Add to the `/etc/ssh/sshd_config` config file two lines
     ClientAliveInterval 600
     ClientAliveCountMax 3
 
-The first one set 600 seconds (10 minutes) timeout before breaking connection.
-The second one set count of checkalive message to 3 times.
-In summ it will get a 30 minutes before disconnection by server.
-DO not forget to restart ssh server:
+The first one set 600 seconds (10 minutes) timeout before breaking a connection.
+The second one set count of checkalive messages to 3.
+In sum it will give 30 minutes before disconnection by server.
+Dj not forget to restart ssh server:
 
     /etc/init.d/ssh restart
 
@@ -70,16 +71,12 @@ PostgreSQL installation
 
     apt-get install postgresql postgresql-client postgresql-contrib libpq-dev
 
-There is an example of new PostgreSQL user and database creation:
+Enter the PosgreSQL console as super-user under 'postgres' user:
 
     su - postgres
     psql
 
-    CREATE USER exampleuser WITH PASSWORD 's0Me_rea11y-#Ard_pa$$word';
-    CREATE DATABASE exampledatabase WITH ENCODING 'UTF8' LC_COLLATE='ru_RU.UTF8' LC_CTYPE='ru_RU.UTF8' TEMPLATE=template0 OWNER exampleuser;
-    \q
-
-    exit
+Hint: type `\q` to exit from the PostgreSQL console.
 
 
 Ruby installation
