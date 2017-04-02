@@ -17,4 +17,6 @@ Rules
 
 [Configure server for Rails project](rails_server_config.md)
 
+[Setup a Debian production server for Rails project](setup_debian_rails_server.md)
+
 [Cбор и хранение бэкапов](backups.md)

@@ -14,6 +14,7 @@
     * Work with protected information
     * [Deploy Rails project with Mina](rules/rails_deploy.md)
     * [Configure server for Rails project](rules/rails_server_config.md)
+    * [Setup a Debian production server for Rails project](rules/setup_debian_rails_server.md)
     * [Cбор и хранение бэкапов](rules/backups.md)
 
 * [Style guides](styleguides/README.md)
