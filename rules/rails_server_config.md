@@ -148,7 +148,7 @@ An example of htaccess file content for user 'proekt' with password 'palenin':
 
     proekt:$apr1$6PTjpb3D$TJvLxdcH67uRT68C6Mp7J.
 
-Create symbolic link of file in the directory `/etc/nginx/sites-enabled`:
+Create symbolic link to the file in the directory `/etc/nginx/sites-enabled`:
 
     cd /etc/nginx/sites-enabled
     ln -s ../sites-available/example example
