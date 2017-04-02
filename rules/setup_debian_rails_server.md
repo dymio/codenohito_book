@@ -16,9 +16,6 @@ All commands in this guide runs under root system user.
 Tested for Rails 4.2.8 application, based on Mayak.
 April 2, 2017.
 
-<!--
-Crocodile
--->
 
 Locale
 ------
@@ -64,7 +61,7 @@ Prepare system for the next steps
 ---------------------------------
 
     apt-get update && apt-get upgrade
-    apt-get install gcc make build-essential curl git imagemagick
+    apt-get install gcc make build-essential curl git-core imagemagick
     mkdir ~/packages
 
 
@@ -95,7 +92,8 @@ Install libraries first:
                     libncurses5 zlib1g-dev libyaml-0-2 libyaml-dev \
                     libreadline6-dev libcurl4-openssl-dev libffi-dev libtinfo5
 
-Maybe you will need `libffi-ruby` and `libpcrecpp0` too.
+<!-- Maybe you will need libffi-ruby libpcrecpp0 libreadline-dev libxml2-dev
+                         libxslt1-dev python-software-properties -->
 
     cd ~/packages
     wget https://cache.ruby-lang.org/pub/ruby/2.3/ruby-2.3.4.tar.gz
@@ -121,6 +119,16 @@ Full installation process described in the official
     apt-get update
     apt-get install -y nginx-extras passenger
 
+<!--
+Configure options for Nginx for manual install from the sources.
+./configure --user=www-data --group=www-data --with-http_ssl_module \
+            --with-http_realip_module --with-http_addition_module \
+            --with-http_sub_module --with-http_dav_module \
+            --with-http_flv_module --with-http_gzip_static_module \
+            --with-mail --with-mail_ssl_module \
+            --add-module=/usr/local/lib/ruby/gems/2.1.0/gems/passenger-4.0.56/ext/nginx
+-->
+
 Edit `/etc/nginx/nginx.conf` and uncomment `include /etc/nginx/passenger.conf;`.
 Then restart Nginx (`service nginx restart`) and check the installation
 is correct with commands:
@@ -135,6 +143,7 @@ There is example of virtual server config with passenger enabled:
         listen [::]:80;
         server_name example.com;
         root /home/exampleuser/www/example/current/public;
+        client_max_body_size 64m;
         passenger_enabled on;
     }
     server {
@@ -180,3 +189,70 @@ Next steps
 ----------
 
 There is [a guide](rails_server_config.md) to setup Rails project on the server.
+
+<!-- Ubuntu
+  Fix locale: `sudo locale-gen "ru_RU.UTF-8"` then `sudo dpkg-reconfigure locales`
+
+  sudo apt-get update && apt-get upgrade
+
+  Install PorgreSQL (the same as in this guide)
+
+  sudo apt-get install gcc make build-essential curl git-core imagemagick
+
+  Install Ruby. The same as in this guide but libraries:
+  sudo apt-get install libc6 libc6-dev libssl-dev libgdbm3 libgdbm-dev \
+                       libgmp10 libncurses5 zlib1g-dev libyaml-0-2 libyaml-dev \
+                       libreadline6-dev libcurl4-openssl-dev libffi-dev \
+                       libtinfo5 libffi-ruby libpcrecpp0 zlib1g-dev libssl-dev \
+                       libreadline-dev libyaml-dev libxml2-dev libxslt1-dev \
+                       libcurl4-openssl-dev python-software-properties \
+                       libffi-dev libgdbm3 libgdbm-dev
+  List isn't fully tested
+
+  Install Nginx with passenger with official guide
+  https://www.phusionpassenger.com/library/install/nginx/install/oss/
+-->
+
+<!-- Unicorn
+  Config example:
+
+    upstream app {
+        # Path to Unicorn SOCK file, as defined previously
+        server unix:/var/www/example/shared/sockets/unicorn.sock fail_timeout=0;
+    }
+
+    server {
+      listen 80;
+      listen [::]:80 ipv6only=on;
+      root ...
+      server_name ...
+
+      try_files $uri/index.html $uri @app;
+
+      access_log /var/log/nginx/example_access.log combined;
+      error_log /var/log/nginx/example_error.log;
+
+      location @app {
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_pass http://app;
+      }
+
+      error_page 404 /404.html;
+
+      # redirect server error pages to the static page
+      error_page 500 502 503 504 /500.html;
+      location = /500.html {
+        root /var/www/example/current/public;
+      }
+
+      client_max_body_size 64m;
+    }
+
+    server {
+      # non-www redirect
+      server_name www.example.com;
+      rewrite ^(.*) http://example.com$1 permanent;
+    }
+-->
