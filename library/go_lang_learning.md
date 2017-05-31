@@ -1,8 +1,7 @@
 Изучение Go
 ===========
 
-Начнём с [A Tour of Go](https://tour.golang.org) &mdash; интерактивного
-ознакомительного тура по языку Go.
+Начинаем с [A Tour of Go](https://tour.golang.org).
 
 
 Материалы
