@@ -34,7 +34,7 @@
 
 * [Helpers](helpers/README.md)
     * [CarrierWave **resize_to** methods cheatsheeet](helpers/carrierwave_resize_to.md)
-    * [Tuning clean Mac OS X Yosemite for Rails developer](helpers/yousemite_tuning_for_rails.md)
+    * [macOS Sierra installation for Rails development](helpers/macos_sierra_install_for_rails.md)
     * [Rails Staging Environment](helpers/rails_staging_environment.md)
     * [Enable NGINX cache for whole site](helpers/full_nginx_cache.md)
 

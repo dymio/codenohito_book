@@ -1,6 +1,8 @@
 Tuning clean Mac OS X Yosemite for Rails developer
 ==================================================
 
+Better to use newer guide for [macOS Sierra](macos_sierra_install_for_rails.md).
+
 * Update OS
 
 * Install applications:
