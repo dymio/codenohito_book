@@ -45,12 +45,18 @@ macOS Sierra installation for Rails development
 
         sudo mkdir -p /etc/paths.d && echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
 
+* Install GPG:
+
+        brew install gpg
+        command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+
 * Install [RVM](https://rvm.io):
 
         \curl -sSL https://get.rvm.io | bash -s stable
 
-* Configure gem environment to avoid downloading documentation during install.
-    Edit file `~/.gemrc` and add line `gem: --no-document` to it.
+* Configure gem environment to avoid downloading documentation during install:
+
+        echo "gem: --no-document" >> ~/.gemrc
 
 * Add to `~/.bash_profile`:
 
