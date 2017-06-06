@@ -1,14 +1,63 @@
 Изучение Go
 ===========
 
-Начинаем с [A Tour of Go](https://tour.golang.org).
+Начинаем с официальных ресурсов: сначала [A Tour of Go](https://tour.golang.org)
+и [How to Write Go Code](https://golang.org/doc/code.html).
+
+После хорошо заходит серия коротких статей
+[Getting Started on Heroku with Go](https://devcenter.heroku.com/articles/getting-started-with-go)
+после которой получаешь представление о реальном веб-приложении на Go.
+
+Тут я рекомендую закрепить знания и написать простое веб-приложение на Go:
+
+    First task​: Build a data model for the diver using PostgreSQL.
+    Second task​: Build a simple service that provides the following API:
+      * (POST) /import : Imports the diver's data into the datastore using
+        the data model implemented before.
+      * (GET) /diver/:id : Gets a diver's info (in a json format) by his id.
+
+    divers data:
+    [{"id":5,"name":"Albert Einstein","certification_card":"MINA28672"},
+    {"id":1352,"name":"Isaac Newton","certification_card":"LOOS28463"},
+    {"id":2,"name":"Galileo Galilei","certification_card":"CSUE39267"},
+    {"id":7,"name":"Charles Darwin","certification_card":"LEER2735"},
+    {"id":9,"name":"Marie Curie","certification_card":"MOON99245"},
+    {"id":8,"name":"Stephen Hawking","certification_card":"SNEWP62293"}]
+
+    Third task: Upload the metrics web app to a cloud provider, such as
+    Heroku/DigitalOcean/aws/google appengine.
+
+Теперь следует вернуться к официальной документации, пройтись
+по [The Go Programming Language Specification](https://golang.org/ref/spec),
+внимательно изучить [Effective Go](https://golang.org/doc/effective_go.html)
+и [FAQ](https://golang.org/doc/faq). В разделе "Documents" ещё уйма материалов
+в Wiki и в блоге, но их можно оставить на потом.
+
+https://semaphoreci.com/community/tutorials/building-go-web-applications-and-microservices-using-gin
+https://semaphoreci.com/community/tutorials/test-driven-development-of-go-web-applications-with-gin
+?
+
+Справочники
+-----------
+
+* https://golang.org/pkg/
+* https://golang.org/ref/spec
+* http://go-database-sql.org/
+
+
+Инструменты
+-----------
+
+* https://github.com/kardianos/govendor
+* https://github.com/gin-gonic/gin
+* https://github.com/jinzhu/gorm
 
 
 Материалы
 ---------
 
-* [The Go Programming Language](https://golang.org/)
-  official site
+* [The Go Programming Language](https://golang.org/) official site with a lot
+  of really usefull links in "Documentation" page.
 
 * ["Go and a not tiny amount of memory"]
   (https://hackernoon.com/go-and-a-not-tiny-amount-of-memory-a7a9430d4d22)
