@@ -41,6 +41,9 @@
 * Articles
     * [Стоит ли использовать БЭМ](articles/should_we_use_bem.md)
 
+* Library
+    * [The Go Programming Language: Информация](library/go_lang_info.md)
+
 
 ### ToDo
 
