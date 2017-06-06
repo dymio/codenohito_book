@@ -65,10 +65,13 @@ by Caleb Doxsey (2012) и её, по мнению некоторых людей,
 
     @dymio: «Тот справочник, к которому будешь обращаться чаще всего»
 
-* [golang.org/ref/spec](https://golang.org/ref/spec)
-  — справочник по языку
+* [Effective Go](https://golang.org/doc/effective_go.html)
+  — как справочник по языку
 
-    @dymio: «Чтобы подглядеть конструкции языка — само то»
+    @dymio: «Формальная [спецификация языка](https://golang.org/ref/spec)
+    слишком многословна и годится для уточнения специфических моментов,
+    а вот в Effective Go очень удобно подсматривать забытые конструкции.»
+
 
 * [Go database/sql tutorial](http://go-database-sql.org/)
   — мини-курс по работе с базой данных
