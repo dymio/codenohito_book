@@ -3,11 +3,11 @@ The Go Programming Language: Информация
 
 Содержание:
 
-- Изучение Go
-- Справочники
-- Инструменты
-- Источники данных
-- Материалы
+- [Изучение Go](#Изучение-go)
+- [Справочники](#Справочники)
+- [Инструменты](#Инструменты)
+- [Источники данных](#Источники-данных)
+- [Материалы](#Материалы)
 
 
 Изучение Go
@@ -134,8 +134,7 @@ by Caleb Doxsey (2012) и её, по мнению некоторых людей,
 Материалы
 ---------
 
-* [Go and a not tiny amount of memory]
-  (https://hackernoon.com/go-and-a-not-tiny-amount-of-memory-a7a9430d4d22)
+* [Go and a not tiny amount of memory](https://hackernoon.com/go-and-a-not-tiny-amount-of-memory-a7a9430d4d22)
   — article by Phil Pearl от 17 мая 2017.
   Была [рекомендована](https://twitter.com/andy_one/status/869497367980113921)
   Andy One (andy_one).
@@ -155,8 +154,7 @@ by Caleb Doxsey (2012) и её, по мнению некоторых людей,
 * [Go дайджест. 1 — 14 марта 2017](https://habrahabr.ru/post/323942/)
   — статья Игоря Фокусова (fokusov) от 15 марта 2017
 
-* [Profiling and optimizing Go web applications]
-  (http://artem.krylysov.com/blog/2017/03/13/profiling-and-optimizing-go-web-applications/)
+* [Profiling and optimizing Go web applications](http://artem.krylysov.com/blog/2017/03/13/profiling-and-optimizing-go-web-applications/)
   — article by Artem Krylysov от 13 марта 2017.
   Есть [перевод](https://habrahabr.ru/company/badoo/blog/324682/)
   Павла Мурзакова (lu4e3ar)
@@ -166,8 +164,7 @@ by Caleb Doxsey (2012) и её, по мнению некоторых людей,
   Была [рекомендована](https://twitter.com/alexeykolosov/status/827220373179613188)
   Алексеем Колосовым.
 
-* [Calling Go Functions from Other Languages]
-  (https://dev.to/vladimirvivien/calling-go-functions-from-other-languages)
+* [Calling Go Functions from Other Languages](https://dev.to/vladimirvivien/calling-go-functions-from-other-languages)
   — article by Vladimir Vivien от 27 февраля 2017.
   Есть [перевод](https://habrahabr.ru/company/mailru/blog/324250/) AloneCoder.
 
@@ -176,10 +173,9 @@ by Caleb Doxsey (2012) и её, по мнению некоторых людей,
 * [Golang tutorial series](https://golangbot.com/learn-golang-series/)
   — tutorial by Naveen Ramanathan начатый 2 февраля 2017
 
-* [Building Go Web Applications and Microservices Using Gin]
-  (https://semaphoreci.com/community/tutorials/building-go-web-applications-and-microservices-using-gin)
-  and [Test-driven Development of Go Web Applications with Gin]
-  (https://semaphoreci.com/community/tutorials/test-driven-development-of-go-web-applications-with-gin)
+* [Building Go Web Applications and Microservices Using Gin](https://semaphoreci.com/community/tutorials/building-go-web-applications-and-microservices-using-gin)
+  and
+  [Test-driven Development of Go Web Applications with Gin](https://semaphoreci.com/community/tutorials/test-driven-development-of-go-web-applications-with-gin)
   — articles by Kulshekhar Kabra от 28 сентября 2016
 
     @dymio: \[1\] «Хорошие статьи чтобы шаг за шагом сделать полноценное
@@ -188,12 +184,9 @@ by Caleb Doxsey (2012) и её, по мнению некоторых людей,
     статью, чтобы добавить тесты в своё приложение, но не разобрался, так что
     читать нужно обе статьи полностью.»
 
-* [Как я 8 месяцев переписывал свою криптовалюту с PHP на Go. Часть 1]
-  (https://habrahabr.ru/company/dcoin/blog/272695/),
-  [Как я 8 месяцев переписывал свою криптовалюту с PHP на Go. Часть 2]
-  (https://habrahabr.ru/post/273333/),
-  [Как я 8 месяцев переписывал Dcoin на Go… про Катю, в общем]
-  (https://habrahabr.ru/post/274885/),
+* [Как я 8 месяцев переписывал свою криптовалюту с PHP на Go. Часть 1](https://habrahabr.ru/company/dcoin/blog/272695/),
+  [Как я 8 месяцев переписывал свою криптовалюту с PHP на Go. Часть 2](https://habrahabr.ru/post/273333/),
+  [Как я 8 месяцев переписывал Dcoin на Go… про Катю, в общем](https://habrahabr.ru/post/274885/),
   [Катя, Go, Dcoin и Android](https://habrahabr.ru/post/277099/),
   [Dcoin на IOS… и Катя. Финал](https://habrahabr.ru/post/281709/)
   — серия статей Олега Стреленко (c-darwin) от 10 декабря 2015 – 15 апреля 2016.
@@ -207,8 +200,7 @@ by Caleb Doxsey (2012) и её, по мнению некоторых людей,
     goroutines и даёт много примеров кода с использованием их и каналов.
     А ещё даёт визуальный пример разницы между concurrency и параллелизмом.»
 
-* [Why Go is a poorly designed language]
-  (https://medium.com/@tucnak/why-go-is-a-poorly-designed-language-1cc04e5daf2)
+* [Why Go is a poorly designed language](https://medium.com/@tucnak/why-go-is-a-poorly-designed-language-1cc04e5daf2)
   — article by Ian Byrd от 28 октября 2015.
   Есть [перевод](https://habrahabr.ru/post/269731/) от Ильи Ковалевского.
 
