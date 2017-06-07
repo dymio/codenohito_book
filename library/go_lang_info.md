@@ -1,6 +1,20 @@
 The Go Programming Language: Информация
 =======================================
 
+Go — это компилируемый язык программирвания с открытым исходным кодом.
+
+Особенностями языка можно назвать:
+
+- ООП в классическом виде отсутствует.
+  Инкапсуляция обеспечивается модульной системой языка.
+  Полиморфизм - использованием interface;
+- Отсутствуют исключения.
+  Разработчики языка считают, что ошибки, если они могут возникнуть,
+  должны обрабатываться на месте;
+- Строгий компилятор.
+  Объявление неиспользуемого модуля или переменной считается ошибкой;
+- Очень быстрая компиляция.
+
 Содержание:
 
 - [Изучение Go](#Изучение-go)
@@ -72,6 +86,8 @@ by Caleb Doxsey (2012) и её, по мнению некоторых людей,
     слишком многословна и годится для уточнения специфических моментов,
     а вот в Effective Go очень удобно подсматривать забытые конструкции.»
 
+* [Go by Example](https://gobyexample.com)
+  — a hands-on introduction to Go using annotated example programs
 
 * [Go database/sql tutorial](http://go-database-sql.org/)
   — мини-курс по работе с базой данных
@@ -121,6 +137,17 @@ by Caleb Doxsey (2012) и её, по мнению некоторых людей,
   — official site with a lot of really usefull links.
 
 * [The Go Wiki](https://github.com/golang/go/wiki)
+
+* [Google-группа golang-nuts](https://groups.google.com/forum/#!forum/golang-nuts)
+  — a general discussion list for the Go Programming Language (практически
+  все разработчики языка и компилятора там присутствуют и отвечают на вопросы)
+
+* [Google-группа анонсов выпусков](https://groups.google.com/forum/#!forum/golang-announce)
+
+* [Google-группа Golang Russian](https://groups.google.com/forum/#!forum/golang-ru)
+  — русскоязычная группа в которой Dmitry Vyukov (один из русскоговорящих
+  разработчиков компилятора отвечающий за разработку планировщика и GC)
+  является активным участником
 
 * [Awesome Go](https://awesome-go.com)
   — a curated list of awesome Go frameworks, libraries and software
