@@ -110,6 +110,7 @@ Software recomendations
             "tab_size": 2,
             "translate_tabs_to_spaces": false,
             "detect_indentation": false,
+            "auto_match_enabled": false,
             "draw_white_space": "selection",
             "trim_trailing_white_space_on_save": true,
             "fallback_encoding": "Cyrillic (Windows 1251)",
