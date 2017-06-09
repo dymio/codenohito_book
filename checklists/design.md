@@ -117,10 +117,10 @@
 ----------------------------------
 
 * Favicon'ы:
-    - файл favicon.ico, состоящий из 4 картинок размеров 16x16, 32x32, 48x48
-      и 64x64 пикселей, который можно собрать с помощью сервиса [ICOConvert]
+    - файл favicon.ico, состоящий из 3 картинок размеров 16x16, 32x32 и 48x48
+      пикселей, который можно собрать с помощью сервиса [ICOConvert]
       (http://icoconvert.com/Multi_Image_to_one_icon/) или команды ImageMagick:
-      `convert icon_16.png icon_32.png icon_48.png icon_64.png -colors 256 favicon.ico`
+      `convert icon_16.png icon_32.png icon_48.png favicon.ico`
       ;
     - png файлы иконки сайта в размерах: 180x180, 152x152, 120x120, 76x76
       и 60x60 пикселей;
