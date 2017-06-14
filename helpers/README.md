@@ -8,3 +8,5 @@ Helpers
 [Rails Staging Environment](rails_staging_environment.md)
 
 [Enable NGINX cache for whole site](full_nginx_cache.md)
+
+[Convert video for HTML5](video_html5_convert.md)

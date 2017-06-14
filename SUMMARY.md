@@ -37,6 +37,7 @@
     * [macOS Sierra installation for Rails development](helpers/macos_sierra_install_for_rails.md)
     * [Rails Staging Environment](helpers/rails_staging_environment.md)
     * [Enable NGINX cache for whole site](helpers/full_nginx_cache.md)
+    * [Convert video for HTML5](helpers/video_html5_convert.md)
 
 * Articles
     * [Стоит ли использовать БЭМ](articles/should_we_use_bem.md)
