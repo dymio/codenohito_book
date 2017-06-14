@@ -41,6 +41,18 @@ Relogin and try `locale -a` to test locale. Should gives no errors, like:
       ru_RU.utf8
 
 
+Time
+----
+
+Check you have correct timezone with command
+
+    date
+
+If you need you can change timezone with comand:
+
+    dpkg-reconfigure tzdata
+
+
 SSH
 ---
 
