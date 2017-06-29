@@ -131,3 +131,10 @@ Software recomendations
 * [TunnelBear](https://www.tunnelbear.com/) _as easy VPN tunelling tool_
 * [Parallels Desktop](http://www.parallels.com/ru/products/desktop/) _as virtualization tool_
 * TheUnarchiver _as richer data decompressor then macOS default_
+
+
+Used materials
+--------------
+
+* [Installation guide](http://railsapps.github.io/installrubyonrails-mac.html)
+  by Daniel Kehoe (updates frequently)
