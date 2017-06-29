@@ -30,7 +30,7 @@
     * [Web site development](checklists/website.md)
     * [Требования к дизайну сайта](checklists/design.md)
 
-* Recomendations for members
+* [Roles](roles/README.md)
 
 * [Helpers](helpers/README.md)
     * [CarrierWave **resize_to** methods cheatsheeet](helpers/carrierwave_resize_to.md)
