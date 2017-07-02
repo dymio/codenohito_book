@@ -161,6 +161,12 @@ by Caleb Doxsey (2012) и её, по мнению некоторых людей,
 Материалы
 ---------
 
+* [Go без глобальных переменных](https://habrahabr.ru/post/331048/)
+  — статья divan0 от 16 июня 2017
+
+* [Миллион WebSocket и Go](https://habrahabr.ru/company/mailru/blog/331784/)
+  — статья gobwas от 28 июня 2017
+
 * [Go and a not tiny amount of memory](https://hackernoon.com/go-and-a-not-tiny-amount-of-memory-a7a9430d4d22)
   — article by Phil Pearl от 17 мая 2017.
   Была [рекомендована](https://twitter.com/andy_one/status/869497367980113921)
