@@ -118,16 +118,48 @@ by Caleb Doxsey (2012) и её, по мнению некоторых людей,
     Выбрал его по рекомендации туториала на Heroku и не пожалел — проблем с ним
     вообще не возникло.»
 
-* [GORM, ORM library](https://github.com/jinzhu/gorm)
+* [reform](https://github.com/go-reform/reform)
+  — a better ORM for Go, based on non-empty interfaces and code generation
 
-    @dymio: «Сам не использовал. Мне его посоветовал Олег Леонтьев. По его
-    словам инструмент удобный в начале, но когда добираешься до более сложных
-    конструкций, вроде необычного запроса данных через has many связь,
-    становится очень непросто понять, как это сделать.»
+    @dymio: «Рекомендовано в 103 выпуске GolangShow, как один из самых
+    распространённых ORM для Go.
+    В свою очередь [GORM](https://github.com/jinzhu/gorm) они не рекомендовали.
+    Да и Олег Леонтьев, который посоветовал эту библиотеку потом сказал, что
+    как только добираешься до более сложных конструкций, вроде необычного
+    запроса данных через has many связь, становится очень непросто.»
+
+* [sqlx](https://github.com/jmoiron/sqlx) — general purpose ext. to database/sql
+
+    @dymio: «Рекомендовано в 103 выпуске GolangShow как лучший инструмент работы
+    с БД, когда приходится работать уже с готовой, созданной кем-то другим БД.
+    Когда проектируешь сам, лучше использовать вышеупомянутый reform.»
 
 * [GoHeft](https://github.com/essentialkaos/goheft)
   — simple utility for listing sizes of all used static libraries compiled
   into golang binary.
+
+* [Dropbox Errors](https://github.com/dropbox/godropbox/blob/master/errors/errors.go)
+  — manipulate errors and provide stack trace information
+
+    @dymio: «Рекомендовано в 103 выпуске GolangShow.»
+
+* [spew](https://github.com/davecgh/go-spew/)
+  — a deep pretty printer for Go data structures to aid in debugging
+
+    @dymio: «Рекомендовано в 103 выпуске GolangShow как хороший инструмент,
+    когда недостаточно `fmt.Printf("%v", i)`.»
+
+* [Logrus](https://github.com/sirupsen/logrus)
+  — a structured logger for Go (golang), compatible with the standard lib logger
+
+    @dymio: «Рекомендовано в 103 выпуске GolangShow как чуть ли не стандарт
+    логирования. Хотя некоторые считают, что стандартного logger'а достаточно.»
+
+* [structlog](https://github.com/powerman/structlog) — structured logger for Go
+
+    @dymio: «Рекомендовано в 103 выпуске GolangShow, как хороший аналог
+    вышеупомянутого Logrus'а. По словам ведущего, он попроще, но вывод больше
+    нравится.»
 
 
 Источники данных
@@ -177,6 +209,13 @@ by Caleb Doxsey (2012) и её, по мнению некоторых людей,
 
 * [Лекции Техносферы: Программирование на Go](https://habrahabr.ru/company/mailru/blog/327966/)
   — курс видео-лекций на Хабре от 10 мая 2017
+
+* [Golang: Undertanding Basic of Concurrence Programming in the easiest way](https://undebugable.wordpress.com/2017/04/23/golang-undertanding-concurrence-programming-basic-in-the-easiest-way/)
+  — article by [Yusuf](https://undebugable.wordpress.com/about/) at 2017.04.23
+
+    @dymio: «Elena Grahovac рекомендовала эту статью в 102 выпуске GolangShow
+    как статью с очень хорошими и последовательными примерами, которые
+    действительно помогают понять то, как работает конкурентность в Go.»
 
 * [Go дайджест. 30 марта — 13 апреля 2017](https://habrahabr.ru/post/326376/)
   — статья Игоря Фокусова (fokusov) от 13 апреля 2017
