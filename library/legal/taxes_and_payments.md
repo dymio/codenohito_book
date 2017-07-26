@@ -157,6 +157,7 @@ $300 заберёт себе Upwork, $30 отдашь за Wire Transfer и то
 * [Легальный вывод средств с Upwork в РФ](https://habrahabr.ru/post/327130/)
   — статья dmatora от 2017.04.21
 * [«Ведение бизнеса» на сайте федеральной налоговой службы](https://www.nalog.ru/create_business/ip/in_progress/)
+* [Учимся работать с иностранными заказчиками](https://e-kontur.ru/enquiry/210)
 * [Как платить налоги и взносы ИП или зачем мы сделали бота-бухгалтера в Telegram](https://habrahabr.ru/company/iloveip/blog/331828/)
   — статья компании [«Я люблю ИП»](http://www.iloveip.ru) от 2017.06.28
 * [Как официально принимать валютные платежи из-за рубежа в России (ИП)](https://habrahabr.ru/post/310300/)
