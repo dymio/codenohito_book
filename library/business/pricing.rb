@@ -3,10 +3,11 @@
 DEF_WORK_HOURS_IN_MONTH = 88
 UPWORK_MULTIPLIER = 0.2
 
-DOLLAR_RATE = 58.5
+DOLLAR_RATE = 57.0
 
 CHARGE_ONE = 1.2
 CHARGE_TWO = 1.5
+CHARGE_THREE = 2.0
 
 
 # Функция рассчёта себестоимости часа работы сотрудника.
@@ -100,15 +101,18 @@ def puts_line(dscr, cost_price, usd = false)
   if usd
     price_one = sixtyficate(cost_price * CHARGE_ONE * 100.0) / 100.0
     price_two = sixtyficate(cost_price * CHARGE_TWO * 100.0) / 100.0
+    price_three = sixtyficate(cost_price * CHARGE_THREE * 100.0) / 100.0
   else
     price_one = sixtyficate cost_price * CHARGE_ONE
     price_two = sixtyficate cost_price * CHARGE_TWO
+    price_three = sixtyficate cost_price * CHARGE_THREE
   end
 
   puts "|   #{prepV dscr} |        " \
        "| #{prepV cost_price, usd } " \
        "| #{prepV price_one, usd } " \
-       "| #{prepV price_two, usd } |"
+       "| #{prepV price_two, usd } " \
+       "| #{prepV price_three, usd } |"
 end
 
 ## Header
@@ -116,17 +120,18 @@ end
 puts ' '
 puts "| position | ставка | себест " \
      "| #{prepV '+' + ((CHARGE_ONE - 1) * 100).round.to_s + '%'} " \
-     "| #{prepV '+' + ((CHARGE_TWO - 1) * 100).round.to_s + '%'} |"
-puts '|----------|--------|--------|--------|--------|'
+     "| #{prepV '+' + ((CHARGE_TWO - 1) * 100).round.to_s + '%'} " \
+     "| #{prepV '+' + ((CHARGE_THREE - 1) * 100).round.to_s + '%'} |"
+puts '|----------|--------|--------|--------|--------|--------|'
 
 ## Body
 
 positions.each_with_index do |pos, indx|
-  puts '|----------------------------------------------|' unless indx == 0
+  puts '|-------------------------------------------------------|' unless indx == 0
 
   puts "| #{pos[:name]}#{' ' * (8 - pos[:name].size)} " \
        "| #{prepV pos[:rate]} " \
-       "| #{' ' * 24} |"
+       "| #{' ' * 33} |"
 
   # Клиент из России; Сотрудник работает удалённо
   x = calc_cost_price pos[:rate], DEF_WORK_HOURS_IN_MONTH, false, false, false
