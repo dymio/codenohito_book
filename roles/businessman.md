@@ -31,4 +31,6 @@
 
     На этой странице найдёте ссылки на типовой шаблон договора.
 
+* [Валютный контроль](../library/business/currency_admission_control.md)
+
 * [Офис](../library/business/office.md)
